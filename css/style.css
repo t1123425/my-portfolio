@@ -81,8 +81,9 @@ hr.star-primary:after {
 
 header {
     text-align: center;
-    color: #fff;
-    background: #6495ED;
+    background:url(img3.jpg) no-repeat fixed center;
+	background-size:100% 100%;
+	height:700px;
 }
 
 header .container {
@@ -99,23 +100,26 @@ header .intro-text .name {
     display: block;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 700;
+	color:#6495ED;
 }
 
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
+	color:white;
 }
 
 @media(min-width:768px) {
+
     header .container {
         padding-top: 200px;
         padding-bottom: 100px;
     }
 
     header .intro-text .name {
-        font-size: 4.75em;
+        font-size: 4.85em;
     }
 
     header .intro-text .skills {
@@ -181,7 +185,7 @@ section h2 {
 
 section.success {
     color: #fff;
-    background: #18bc9c;
+    background: #6495ED;
 }
 
 @media(max-width:767px) {
