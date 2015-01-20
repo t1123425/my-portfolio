@@ -13,8 +13,11 @@
 <!--Style CSS -->
 <link href="css/style.css" rel="stylesheet">
 
+<!-- other effect CSS-->
+<link rel="stylesheet" href="css/magic.min.css">
+
 <!-- Custom Fonts -->
-    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -31,7 +34,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="nav-button">
-	<img src="img/glyphicons-517-menu-hamburger.png">
+	&nbsp;<i class="fa fa-align-justify fa-3x	nav-button-icon" style="color:white"></i>
 	</div>
 	<div class="nav-row">
 		<ul class="nav navbar-nav">
@@ -53,7 +56,8 @@
 
 <!-- Header -->
  <header>
- <div class="image"></div>
+ <div class="image">
+ </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -63,8 +67,10 @@
                     </div>
                 </div>
             </div>
+			
         </div>
-		
+				<a class="page-down fa fa-arrow-circle-down fa-3x" href="#about"></a>
+			
 </header>
 
 <!-- About Section -->	
@@ -96,6 +102,7 @@
 			</div>
 		</div>
 	 </section>
+
 <!--Work Section -->	 
 	<section id="portfolio">
 			<div class="container">	
@@ -122,33 +129,40 @@
 	</section>
 	<!-- contact-->
 	<section id="contact">
+			
+				<h4>There are some way you can contact with me!!</h4>
+			
 		<div class="container">
-			<p>
-				There are some way you can contact with me!!
-			</p>
 				<div class="contact-icon">
 					<ul>
 						<li>
-							<a href="https://github.com/t1123425/My-portfolio">
-								<img src="img/social-22-github.png" class="img-responsive">
+							<a href="https://github.com/t1123425/My-portfolio"	target="_blank">
+								<i class="fa fa-github-alt fa-4x"></i>
 							</a>
 						</li>
 						<li>
-							<img src="img/social-40-e-mail.png" class="img-responsive">
+							<i class="fa fa-envelope fa-4x"></i>
+							<br>
 							t1123425@gmail.com
 						</li>
 						<li>
-							<img src="img/social-18-linked-in.png" class="img-responsive">
+							<a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"	target="_blank">
+							 <i class="fa fa-linkedin-square fa-4x"></i>
+							</a> 
 						</li>
 					</ul>
 				</div>
 		</div>
 	</section>
 	<footer>
-		2015 &copy tom yuan design
+		Copyright &copy; Tom Yuan Website 2015
 	</footer>
-  <!-- jQuery -->
+	
+	<!-- jQuery -->
 <script src="js/jquery.js"></script>
+
+	<!-- magic effect js -->
+<script src="js/magic.js"></script>
 
 <script text="text/javascript">
 //mobile Navigation bar
@@ -171,9 +185,12 @@ $(function(){
 		$('html,body').animate({scrollTop:$('header').position().top}, 800);
 		return false;
 	});	
-
 	$('.about').click(function(){ 
-		$('html,body').animate({scrollTop:$('#about').position().top}, 800);
+		$('html,body').animate({scrollTop:$('.img-responsive').position().top}, 800);
+		return false;
+	});
+	$('.page-down').click(function(){ 
+		$('html,body').animate({scrollTop:$('.img-responsive').position().top}, 800);
 		return false;
 	});
 	$('.work').click(function(){ 

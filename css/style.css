@@ -51,18 +51,18 @@ height:100%;
 width:100%;
 position:absolute;
 }
+header .page-down{
+position:absolute;
+text-decoration: none;
+margin-top:10%;
+}
 header .container {
     padding-top: 100px;
     padding-bottom: 50px;
+	vertical-align:text-top;
 }
-
-header img {
-    display: block;
-    margin: 0 auto 20px;
-}
-
 header .intro-text{
-padding-top:100px;
+padding-top:4%;
 }
 
 header .intro-text .name {
@@ -86,16 +86,21 @@ header .intro-text .hello {
         padding-top: 200px;
         padding-bottom: 100px;
     }
-
+	
     header .intro-text .name {
         font-size: 4.85em;
     }
-
+	header .intro-text{
+		padding-top:5%;
+	}
+	
     header .intro-text .hello {
         font-size: 1.75em;
     }
 	
 }
+
+/*Navigation*/
 
 @media(min-width:768px) {
 	.nav-button{
@@ -151,6 +156,9 @@ header .intro-text .hello {
     border: 0;
 }
 
+
+
+/*about me*/
 section {
     padding: 100px 0;
 	color:#fff;
@@ -173,21 +181,14 @@ section.success {
 	}
 	.nav-button{
 	display:block;
-	background:#6495ED;
-	width:50px;
 	}
 	.nav-row{
 	opacity:0.8;
 	background:#6495ED;
 	}
-	.nav-button img{
-	width:50px;
-	}
-	
     section {
         padding: 150px 0;
     }
-
     section.first {
         padding-top: 75px;
     }
@@ -274,16 +275,33 @@ border-radius:25px;
 }
 /*contact block*/
 
+#contact{
+	background:url(img3.jpg) no-repeat fixed center;
+	background-size:cover;
+	text-align:center;
+}
+#contact h4{
+color:#6495ED;
+}
 .contact-icon{
-text-align:center;
+	vertical-align:middle;
 }
 .contact-icon ul li{
-margin:10%;
-float:left;
+	margin:12%;
+	float:left;
 }
 @media(max-width:767px){
 .contact-icon ul li{
-clear:left;
+	text-align:left;
+	clear:left;
 }
 }
+
+/*footer*/
+footer{
+text-align:center;
+background:white;
+}
+
+
 
