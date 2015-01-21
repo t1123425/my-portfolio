@@ -184,6 +184,7 @@ section.success {
 	}
 	.nav-button{
 	display:block;
+	margin-top:30px;
 	}
 	#nav-toggle { position: absolute;}
 

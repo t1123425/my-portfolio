@@ -6,7 +6,6 @@ $(function(){
 
 		if($this_Top > 300){	
 			$('#nav-toggle').css({"background-color":"#18bc9c"});
-
 		}
 		if($this_Top < 300){
 			$('#nav-toggle').css({"background-color":"transparent"});
