@@ -51,16 +51,13 @@ height:100%;
 width:100%;
 position:absolute;
 }
-header .page-down{
-position:absolute;
-text-decoration: none;
-margin-top:10%;
-}
+
 header .container {
     padding-top: 100px;
     padding-bottom: 50px;
-	vertical-align:text-top;
+	text-align: center;
 }
+
 header .intro-text{
 padding-top:4%;
 }
@@ -76,10 +73,15 @@ header .intro-text .name {
 
 header .intro-text .hello {
     font-size: 1.25em;
-    font-weight: 300;
+    font-weight: 400;
 	color:#18bc9c;
 }
 
+header .page-down{
+position:absolute;
+text-decoration: none;
+margin-top:10%;
+}
 @media(min-width:768px) {
 
     header .container {
@@ -97,7 +99,6 @@ header .intro-text .hello {
     header .intro-text .hello {
         font-size: 1.75em;
     }
-	
 }
 
 /*Navigation*/
@@ -175,12 +176,50 @@ section.success {
     background: #6495ED;
 }
 
+/*mobile nav-toggle*/
+
 @media(max-width:767px) {
 	.nav-row{
 		display:none;
 	}
 	.nav-button{
 	display:block;
+	}
+	#nav-toggle { position: absolute;}
+
+	#nav-toggle { cursor: pointer; padding: 10px 35px 16px 0px; }
+	
+	#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+		cursor: pointer;
+		border-radius: 1px;
+		height: 5px;
+		width: 35px;
+		background: white;
+		position: absolute;
+		display: block;
+		content: '';
+	}
+	#nav-toggle span:before {
+		top: -10px; 
+	}
+	#nav-toggle span:after {
+		bottom: -10px;
+	}
+
+	#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+		transition: all 500ms ease-in-out;
+	}
+	#nav-toggle.active span {
+		background-color: transparent;
+	}
+	#nav-toggle.active span:before, #nav-toggle.active span:after {
+		top: 0;
+	}
+	#nav-toggle.active span:before {
+		transform: rotate(45deg);
+	}
+	#nav-toggle.active span:after {
+		transform: rotate(-45deg);
 	}
 	.nav-row{
 	opacity:0.8;

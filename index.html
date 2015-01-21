@@ -34,7 +34,7 @@
 <!-- Navigation-->
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="nav-button">
-	&nbsp;<i class="fa fa-align-justify fa-3x	nav-button-icon" style="color:white"></i>
+	&nbsp;<a id="nav-toggle" href="#"><span></span></a>
 	</div>
 	<div class="nav-row">
 		<ul class="nav navbar-nav">
@@ -56,8 +56,7 @@
 
 <!-- Header -->
  <header>
- <div class="image">
- </div>
+ <div class="image"></div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -67,7 +66,6 @@
                     </div>
                 </div>
             </div>
-			
         </div>
 				<a class="page-down fa fa-arrow-circle-down fa-3x" href="#about"></a>
 			
@@ -164,22 +162,31 @@
 	<!-- magic effect js -->
 <script src="js/magic.js"></script>
 
+	<!--scroll js-->
+
+<script src="js/scroll.js"></script>
+
 <script text="text/javascript">
 //mobile Navigation bar
 var pageWidth= $(window).width();
 var menu = $('.nav-row');
 var menu_buttom = menu.find('li a');
 
-			$('.nav-button').click(
+			$('#nav-toggle').click(
 			function(){
-				menu.slideToggle();
+				menu.slideToggle(),
+				this.classList.toggle( "active" );
+				return false;
 			});
+			
 			if(pageWidth < 767){
 				menu_buttom.click(
 					function(){
 						menu.slideUp();
 					});
 			}
+
+			
 $(function(){
 	$('.home').click(function(){ 
 		$('html,body').animate({scrollTop:$('header').position().top}, 800);
