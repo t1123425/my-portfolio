@@ -23,9 +23,11 @@ a:active,
 a.active {
     outline: 0;
     color: #fff;
+	text-decoration: none;
 }
 a:hover{
 	color:#6495ED;
+	text-decoration: none;
 }
 ol,ul{
 	list-style:none
@@ -77,10 +79,14 @@ header .intro-text .hello {
 	color:#18bc9c;
 }
 
-header .page-down{
+.page-down{
 position:absolute;
 text-decoration: none;
 margin-top:10%;
+left:50%;
+}
+.page-down a:focus{
+text-decoration: none;
 }
 @media(min-width:768px) {
 
