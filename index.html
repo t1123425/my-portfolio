@@ -109,7 +109,7 @@
 				<br>
 				<div class="row">
 					<div class="col-sm-4 portfolio-item">
-						<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+						<a href="http://www.vmage.com.tw/" class="portfolio-link" target="_blank">
 							<div class="caption">
 								<div class="caption-content">
 									<i>VMAGE Co., Ltd official website(2014 version)</i>
@@ -171,6 +171,7 @@
 var pageWidth= $(window).width();
 var menu = $('.nav-row');
 var menu_buttom = menu.find('li a');
+var nav_toggle = $('#nav-toggle');
 
 			$('#nav-toggle').click(
 			function(){
@@ -182,7 +183,8 @@ var menu_buttom = menu.find('li a');
 			if(pageWidth < 767){
 				menu_buttom.click(
 					function(){
-						menu.slideUp();
+						menu.slideUp(),
+						nav_toggle.toggleClass("active");
 					});
 			}
 
