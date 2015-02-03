@@ -187,6 +187,7 @@ section.success {
 @media(max-width:767px) {
 	.nav-row{
 		display:none;
+		background-color:#18bc9c;
 	}
 	.nav-button{
 	display:block;
@@ -228,9 +229,8 @@ section.success {
 	#nav-toggle.active span:after {
 		transform: rotate(-45deg);
 	}
-	.nav-row{
-	opacity:0.8;
-	background:#6495ED;
+	.page-down{
+	left:45%;
 	}
     section {
         padding: 150px 0;
