@@ -175,10 +175,10 @@ var menu_buttom = menu.find('li a');
 var nav_toggle = $('#nav-toggle');
 
 			$('#nav-toggle').click(
-			function(){
-				menu.slideToggle(),
+			function(e){
+				menu.stop().slideToggle(),
 				this.classList.toggle( "active" );
-				return false;
+				e.preventDefault();
 			});
 			
 			if(pageWidth < 767){
