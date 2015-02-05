@@ -174,19 +174,20 @@ var menu = $('.nav-row');
 var menu_buttom = menu.find('li a');
 var nav_toggle = $('#nav-toggle');
 
+			
+			
+		if(pageWidth < 767){
 			$('#nav-toggle').click(
 			function(e){
-				menu.stop().slideToggle(),
-				this.classList.toggle( "active" );
 				e.preventDefault();
+				this.classList.toggle( "active" );
+				menu.stop().slideToggle();
 			});
-			
-			if(pageWidth < 767){
 				menu_buttom.click(
 					function(e){
-						menu.stop().slideToggle(),
-						nav_toggle.removeClass("active");
 						e.preventDefault();
+						nav_toggle.removeClass("active");
+						menu.stop().slideToggle();
 					});
 			}
 
