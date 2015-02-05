@@ -188,7 +188,9 @@ section.success {
 	.nav-row{
 		display:none;
 		background-color:#18bc9c;
+		margin-top:30px;
 	}
+	
 	.nav-button{
 	display:block;
 	margin-top:30px;
