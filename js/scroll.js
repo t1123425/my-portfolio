@@ -1,21 +1,36 @@
 $(function(){
 
 	$(window).bind('scroll resize', function(){
-		var $this = $(this);
-		var $this_Top=$this.scrollTop();
+		var $this_Top=$(this).scrollTop();
 
 		if($this_Top > 500){	
-			$('.navbar').css({"background-color":"#18bc9c",
-							  "transition": "background-color 0.5s linear", 
-							"-moz-transition":"background-color 0.5s linear",  
-							"-webkit-transition":"background-color 0.5s linear", 
-							"-ms-transition":"background-color 0.5s linear" 
-								});
+			$('.navbar').addClass('nav-color');
 		}
 		if($this_Top < 500){
-			$('.navbar').css({"background-color":"transparent"});
+			$('.navbar').removeClass('nav-color');
 		}
 
 	}).scroll();
+
+	$('.home').click(function(){ 
+		$('html,body').animate({scrollTop:$('#header').position().top}, 800);
+		return false;
+	});	
+	$('.about').click(function(){ 
+		$('html,body').animate({scrollTop:$('#about').position().top}, 800);
+		return false;
+	});
+	$('.work').click(function(){ 
+		$('html,body').animate({scrollTop:$('#portfolio').position().top}, 800);
+		return false;
+	});
+	$('.contact').click(function(){ 
+		$('html,body').animate({scrollTop:$('#contact').position().top}, 800);
+		return false;
+	});
+	$('.page-down').click(function(){ 
+		$('html,body').animate({scrollTop:$('#about').position().top}, 800);
+		return false;
+	});
 
 });

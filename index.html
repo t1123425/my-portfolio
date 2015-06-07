@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title> TOM YUAN WEBSITE </title>
 <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
 <meta name="author" content="tom yuan,袁傳青" />
-
+<meta property="og:title" content="TOM YUAN WEBSITE">
+<meta property="og:image" content="img/head.png" />
+<meta property="og:description" content="Hello, I'm Tom Yuan,This is my portfolie,I am Front-end developer living in taiwan." >
+<title> TOM YUAN WEBSITE </title>
 <!-- bootstrap CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 
 <!--Style CSS -->
 <link href="css/style.css" rel="stylesheet">
+<link href="css/resp-style.css" rel="stylesheet">
 
 <!-- other effect CSS-->
 <link rel="stylesheet" href="css/magic.min.css">
@@ -28,6 +31,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+
 
 </head>
 <body>
@@ -55,40 +59,41 @@
 </nav>
 
 <!-- Header -->
- <header>
- <div class="image"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-text">
-                        <span class="name">I AM Tom Yuan</span>
-                        <span class="hello">welcome to my website</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-				<a class="page-down fa fa-arrow-circle-down fa-3x" href="#about"></a>
-			
-</header>
+ <section id="header">
+		<div id="header-image" class="image">
+			<div class="container">
+			            <div class="row">
+			                <div class="col-lg-12 col-xs-12">
+			                    <div class="intro-text">
+			                        <span class="name">I AM Tom Yuan</span>
+			                        <span class="hello">welcome to my website</span>
+			                    </div>
+			                </div>
+			            </div>
+			            <a class="page-down fa fa-arrow-circle-down fa-3x" href="#about"></a>
+			  </div>	
+		</div>
+		 
+</section>
 
 <!-- About Section -->	
 	<section id="about" class="success">
-		<div class="container up-padding">
+		<div class="container ">
+			<h2 class="ab_me">ABOUT ME</h2>
+			<hr>
+			<div class="head-shot">
+				<img src="img/head.png" class="img-responsive head-shot-image" alt="tom yuan">
 				<br>
-					<h2 class="ab_me">ABOUT ME</h2>
-					<hr>
-				<br>
-		<img src="img/head.png" class="img-responsive" alt="tom yuan">
-			<br>
-			<span >
-				Hello!! I'm TOM YUAN(yuan ,chuan ching) 
-				<br>
-				I am Front-end developer living in taiwan , I graduated from "jinwen university of science and technology"
-				My first F2E job was started in 2014 ,After that coding became my one of hobbies, 
-				Although i was the beginner of this area ,I had strong passion for new technologies, 
-				code standards, doing things right and intuitive user experiences.
-			</span>
-			<br>
+				<span>
+					Hello!! I'm TOM YUAN(yuan ,chuan ching) 
+					<br>
+					I am Front-end developer living in taiwan , I graduated from "jinwen university of science and technology",
+					My first F2E job was started in 2014 ,That time i was part-time job and help my company built new official site
+					After that i was wonder to became a Web Front-end developer, Although i was the beginner of this area ,
+					I had strong passion for new technologies,and i'm keep improving my coding skill, there are some website
+					i built which you can view in my work area.
+				</span>
+			</div>		
 			<div class="skill">
 					<h2>My skill</h2>
 						<hr>
@@ -99,6 +104,7 @@
 								<li>JQUERY</li>
 							</ul>
 			</div>
+			
 		</div>
 	 </section>
 
@@ -109,48 +115,105 @@
 					<hr>
 				<br>
 				<div class="row">
-					<div class="col-sm-4 portfolio-item">
-						<a href="http://www.vmage.com.tw/" class="portfolio-link" target="_blank">
+					<div class="col-sm-4  col-xs-10 portfolio-item" >
+						<div class="portfolio-link" onclick="showOut(2)">
 							<div class="caption">
 								<div class="caption-content">
+									<i>Qmi App WebSite(2015 version)</i>
+								</div>
+							</div>
+							<img src="img/portfolio/demo4.png" class="img-responsive" alt="work1">
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-10 portfolio-item">
+						<div class="portfolio-link" onclick="showOut(1)">
+							<div class="caption">
+								<div class="caption-content"  >
 									<i>VMAGE Co., Ltd official website(2014 version)</i>
 								</div>
 							</div>
 							<img src="img/portfolio/demo1.png" class="img-responsive" alt="work1">
-						</a>
+						</div>
 					</div>
-					<span>
-						Site of  VMAGE Co., Ltd , this was 2014 version , I built this site with html5+css+jquery
-						and this was first site i built in RWD.
-					</span>
 				</div>
-		</div>	
+
+			</div>
+			<div class="my-work">
+					<div  class="work-contain">
+						<div class="close-btn">
+							<i class="fa fa-times fa-2x"></i>
+						</div>
+						<div id="Demo1-Carousel" class="carousel slide"data-ride="carousel">
+							<div class="carousel-inner">
+								<div id="i1" class="item active">
+									<img src="img/portfolio/demo1.png" class="img-responsive">
+								</div>
+								<div id="i2" class="item">
+									<img src="img/portfolio/demo2.png" class="img-responsive">
+								</div>
+								<div id="i3" class="item">
+									<img src="img/portfolio/demo3.png" class="img-responsive">
+								</div>
+							</div>
+							<ol class="carousel-indicators">
+								<li data-target="#Demo1-Carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#Demo1-Carousel" data-slide-to="1"></li>
+								<li data-target="#Demo1-Carousel" data-slide-to="2"></li>
+							</ol>
+							<p class="work-introduce">
+								Site of  VMAGE Co., Ltd , this was 2014 version , I built this site with html5+css+jquery
+								and this was first site i built in RWD.
+							</p>
+						</div>
+						<div id="Demo2-Carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+								<div id="i1" class="item active">
+									<img src="img/portfolio/demo4.png" class="img-responsive">
+								</div>
+								<div id="i2" class="item">
+									<img src="img/portfolio/demo5.png" class="img-responsive">
+								</div>
+								<div id="i3" class="item">
+									<img src="img/portfolio/demo6.png" class="img-responsive">
+								</div>
+							</div>
+							<ol class="carousel-indicators">
+								<li data-target="#Demo2-Carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#Demo2-Carousel" data-slide-to="1"></li>
+								<li data-target="#Demo2-Carousel" data-slide-to="2"></li>
+							</ol>
+							<p class="work-introduce">
+								Qmi App Product Website,this site was built with css framework(bootstrap),
+								The contact form was use AJAX to submit custom content. 
+							</p>
+							<a href="https://www.qmi.emome.net/" target="_blank">Visit site</a>
+						</div>
+					</div>
+			</div>	
 	</section>
 	<!-- contact-->
-	<section id="contact">
-			
-				<h4>There are some way you can contact with me!!</h4>
-			
-		<div class="container">
-				<div class="contact-icon">
-					<ul>
-						<li>
-							<a href="https://github.com/t1123425/My-portfolio"	target="_blank">
+	<section id="contact">	
+		<h4>There are some way you can contact with me!!</h4>
+		<div class="contact-icon">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-sm-4 col-xs-12 contain-icon">
+						<a href="https://github.com/t1123425/My-portfolio"	target="_blank">
 								<i class="fa fa-github-alt fa-4x"></i>
-							</a>
-						</li>
-						<li>
-							<i class="fa fa-envelope fa-4x"></i>
-							<br>
-							t1123425@gmail.com
-						</li>
-						<li>
-							<a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"	target="_blank">
+						</a>
+					</div>
+					<div class="col-lg-4 col-sm-4 col-xs-12 contain-icon">
+						<i class="fa fa-envelope fa-4x"></i>
+						<br>
+						t1123425@gmail.com
+					</div>
+					<div class="col-lg-4 col-sm-4 col-xs-12 contain-icon">
+						<a href="https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile"	target="_blank">
 							 <i class="fa fa-linkedin-square fa-4x"></i>
-							</a> 
-						</li>
-					</ul>
+						</a> 
+					</div>	
 				</div>
+			</div>	
 		</div>
 	</section>
 	<footer>
@@ -159,61 +222,40 @@
 	
 	<!-- jQuery -->
 <script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
-	<!-- magic effect js -->
-<script src="js/magic.js"></script>
+<!-- carousel swipe -->
+<script src="js/carousel-swipe.js"></script>
 
-	<!--scroll js-->
+<!-- menu bar -->
+<script src="js/menu-bar.js"></script>
+<!--scroll js-->
 
 <script src="js/scroll.js"></script>
+<script src="js/parallax.js"></script> 
 
 <script text="text/javascript">
-//mobile Navigation bar
-var pageWidth= $(window).width();
-var menu = $('.nav-row');
-var menu_buttom = menu.find('li a');
-var nav_toggle = $('#nav-toggle');
 
-			
-			
-		if(pageWidth < 767){
-			$('#nav-toggle').click(
-			function(e){
-				e.preventDefault();
-				this.classList.toggle( "active" );
-				menu.stop().slideToggle();
-			});
-				menu_buttom.click(
-					function(e){
-						e.preventDefault();
-						nav_toggle.removeClass("active");
-						menu.stop().slideToggle();
-					});
-			}
 
-			
-$(function(){
-	$('.home').click(function(){ 
-		$('html,body').animate({scrollTop:$('header').position().top}, 800);
-		return false;
-	});	
-	$('.about').click(function(){ 
-		$('html,body').animate({scrollTop: 820}, 800);
-		return false;
-	});
-	$('.page-down').click(function(){ 
-		$('html,body').animate({scrollTop: 820}, 800);
-		return false;
-	});
-	$('.work').click(function(){ 
-		$('html,body').animate({scrollTop:$('#portfolio').position().top}, 800);
-		return false;
-	});
-	$('.contact').click(function(){ 
-		$('html,body').animate({scrollTop:$('#contact').position().top}, 800);
-		return false;
-	});
+//work show and hide 
+$('.close-btn').click(function(){
+	$('.my-work').fadeOut();
+	$('.carousel').hide();
+});
 
+function showOut(n){
+	if(n==1){
+		$('#Demo1-Carousel').show();
+		$('.my-work').fadeIn();
+	}else {
+		$('.my-work').fadeIn();
+		$('#Demo2-Carousel').show();
+	}
+
+}		
+//carousel slider 
+$( ".carousel" ).carousel({ 
+	interval: 5000 
 });
 </script>
 </body>
