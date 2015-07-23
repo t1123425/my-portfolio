@@ -36,7 +36,7 @@ a.active {
     outline: 0;
     color: #fff;
 	text-decoration: none;
-}
+} 
 a:hover{
 	color:#6495ED;
 	text-decoration: none;
@@ -298,7 +298,7 @@ border-radius:25px;
   z-index: 1030;
   float: left;
   top: 0;
-  overflow: scroll;
+  
 }
 .work-contain{
     width:80%;
@@ -337,6 +337,7 @@ border-radius:25px;
   color: black;
   margin-top: 2%;
 }
+
 /*contact block*/
 
 #contact{
