@@ -46,6 +46,7 @@
      #portfolio .portfolio-item {
         margin: 0 0 30px;
     }
+
 }
 
 
@@ -132,7 +133,14 @@
         height: initial;
         text-align: -webkit-center;
     }
-
+    /*skill*/
+    .skill-row{
+        font-size: 13px;
+        padding: 0; 
+    }
+    .skill-row li{
+        width: 258px; 
+    }
     /*portfolio*/
     #portfolio{
     height:auto;    

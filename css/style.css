@@ -219,19 +219,27 @@ margin-top:30px;
 }
 
 .skill-row{
-text-align:center;
+/*text-align:center;*/
+font-size:30px;
 }
 .skill-row li{
 color:#6495ED;
-float:left;
+/*float:left;*/
 padding:50px;
 display:block;
 margin:30px;
 background:#fff;
 border-radius:25px;
 }
+.progress{
+  height:35px;
 
-
+}
+.progress .progress-bar {
+    font-size: 20px;
+    line-height: 31px;
+    background-color:#18bc9c;
+}
 
 /*work block*/
 #portfolio{
