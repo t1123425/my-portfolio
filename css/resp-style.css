@@ -58,7 +58,8 @@
 /*moblie side view*/
 @media(max-height:600px){
     #header{
-        height:600px; 
+        /*height:600px; */
+       height: 480px;
     }
 }
 
@@ -119,7 +120,8 @@
 
     /*header*/
    .intro-text {
-        margin-top: 50%;
+       /* margin-top: 50%;*/
+      margin-top: 131px;
     }
     .intro-text .name{
         font-size:3em;
@@ -144,7 +146,7 @@
     /*portfolio*/
     #portfolio{
     height:auto;    
-    margin-top: 25%;
+    /*margin-top: 25%;*/
     }
     /*work*/
     .work-contain {
