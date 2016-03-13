@@ -248,6 +248,10 @@ border-radius:25px;
     font-size: 20px;
     line-height: 31px;
     background-color:#18bc9c;
+    -webkit-transition: all 2s ease-in; /* Safari */
+    -moz-transition: all 2s ease-in;
+    -o-transition: all 2s ease-in;
+      transition: all 2s ease-in;
 }
 
 /*work block*/
