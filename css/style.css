@@ -362,15 +362,15 @@ border-radius:25px;
 /*contact block*/
 
 #contact{
-	background:url(img3.jpg) no-repeat fixed center;
-	background-size:cover;
+	/*background:url(img3.jpg) no-repeat fixed center;
+	background-size:cover;*/
 	text-align:center;
-    height: 50%;
+  height: 50%;
 }
-#contact h4{
+/*#contact h4{
 color:#6495ED;
 
-}
+}*/
 .contact-icon{
 	vertical-align:middle;
   margin-top:10%; 
