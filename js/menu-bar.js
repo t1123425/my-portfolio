@@ -12,7 +12,8 @@ var menu_button = menu.find('li a');
 			e.preventDefault();
 			menu.stop().slideToggle();
 			this.classList.toggle( "active" );
-	});
+ });
+ 
 if($(window).width() < 767){
 
 		menu_button.click(function(e){
