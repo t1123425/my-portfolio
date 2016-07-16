@@ -89,7 +89,11 @@ $(function(){
 
 	}
 
-			
+	$.getJSON('infor.json',function(data){
+		console.log(data);
+
+	});
+	console.debug('123');
 	//carousel slider 
 	$( ".carousel" ).carousel({ 
 		interval: 5000 
