@@ -291,7 +291,15 @@ to {top:-10px;}
   border-radius: 30px;
   margin: auto;
 }
-
+.langContent{
+  margin:20px 0 20px 0;
+}
+.langContent span{
+  cursor: pointer;
+}
+.langContent span:hover{
+  color:#6495ED; 
+}
 
 /* skill block*/
 .skill{
@@ -299,7 +307,7 @@ to {top:-10px;}
 }
 
 .skill-row{
-/*text-align:center;*/
+text-align: left;
 font-size:30px;
 }
 .skill-row li{
@@ -315,13 +323,13 @@ border-radius:25px;
   height:35px;
 }
 .progress .progress-bar {
-    font-size: 20px;
-    line-height: 31px;
-    background-color:#18bc9c;
-    -webkit-transition: all 2s ease-in; /* Safari */
-    -moz-transition: all 2s ease-in;
-    -o-transition: all 2s ease-in;
-      transition: all 2s ease-in;
+  font-size: 20px;
+  line-height: 31px;
+  background-color:#18bc9c;
+  -webkit-transition: all 2s ease-in; /* Safari */
+  -moz-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+    transition: all 2s ease-in;
 }
 
 /*work block*/
