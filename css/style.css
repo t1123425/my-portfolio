@@ -313,7 +313,19 @@ to {top:-10px;}
 .skill{
  margin-top:30px;
 }
-
+/*skill icon*/
+#icon-javascript-alt {
+  /* font-size: 91px; */
+  font-size: 5em;
+  line-height: 1px;
+  color: #FFC107;
+}
+.fa-html5:before {
+  color: #FF5722;
+}
+.fa-css3:before{
+  color: #2196F3;
+}
 .skill-row{
 text-align: left;
 font-size:30px;
