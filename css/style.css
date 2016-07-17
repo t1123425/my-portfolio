@@ -300,7 +300,15 @@ to {top:-10px;}
 .langContent span:hover{
   color:#6495ED; 
 }
-
+#chContent{
+  display:block; 
+}
+.infoContent{
+  display:none; 
+}
+.inforDetail {
+  text-align: left;
+}
 /* skill block*/
 .skill{
  margin-top:30px;
@@ -427,7 +435,9 @@ border-radius:25px;
   margin-left: 8%;
 }
 .carousel-inner .item{
-      margin-top:55px; 
+   width: 100%;
+   max-width: 750px;
+   margin: 20px auto; 
 }
 .carousel-inner div img{
     max-width:1282px; 
@@ -444,8 +454,6 @@ border-radius:25px;
 /*contact block*/
 
 #contact{
-	/*background:url(img3.jpg) no-repeat fixed center;
-	background-size:cover;*/
 	text-align:center;
   height: 50%;
 }
@@ -557,7 +565,7 @@ section.success{
     padding: 0; 
 }
 .skill-row li{
-    width: 258px; 
+    /*width: 258px; */
 }
 /*portfolio*/
 #portfolio{

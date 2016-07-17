@@ -25,6 +25,14 @@ $(function(){
 		return false;
 	});
 
+	// language
+	$('#ed').click(function(){
+		$('#enContent').show().siblings('.infoContent').hide();
+	});
+	$('#ch').click(function(){
+		$('#chContent').show().siblings('.infoContent').hide();
+	});
+
 	$(window).scroll(function(){
 		if($(this).scrollTop() > 1000){
 			// console.debug('123');
@@ -33,20 +41,20 @@ $(function(){
 	});
 
 	function showProgress(){
-		$('#firstValue').text(firstNum);
-		$('#secondValue').text(secondNum);
-		$('#thirdValue').text(thridNum);
-		$('.value').each(function () {
-		    $(this).prop('Counter',0).animate({
-		        Counter: $(this).text()
-		    }, {
-		        duration: 2000,
-		        easing: 'swing',
-		        step: function (now) {
-		            $(this).text(Math.ceil(now));
-		        }
-		    });
-		});
+		// $('#firstValue').text(firstNum);
+		// $('#secondValue').text(secondNum);
+		// $('#thirdValue').text(thridNum);
+		// $('.value').each(function () {
+		//     $(this).prop('Counter',0).animate({
+		//         Counter: $(this).text()
+		//     }, {
+		//         duration: 2000,
+		//         easing: 'swing',
+		//         step: function (now) {
+		//             $(this).text(Math.ceil(now));
+		//         }
+		//     });
+		// });
 
 		$('#firstValue').css('width',''+firstNum+'%');
 		$('#secondValue').css('width',''+secondNum+'%');
@@ -88,10 +96,14 @@ $(function(){
 		}
 
 	}
-
+	$('#portfolio1').click(function(){
+		showOut(1);
+	});
+	$('#portfolio2').click(function(){
+		showOut(2);
+	});
 	$.getJSON('js/infor.json',function(data){
 		console.log(data);
-
 	});
 	
 	//carousel slider 

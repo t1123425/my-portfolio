@@ -81,21 +81,29 @@
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<h2 class="ab_me">ABOUT ME</h2>
 					<div class="langContent">
-						<span>English</span> / <span>中文</span>
+						<span id="ed">English</span> / <span id="ch">中文</span>
 					</div>
 					<hr>
 					<div class="head-shot">
 						<img src="img/head.png" class="img-responsive head-shot-image" alt="tom yuan">
 					<br>
-
+					<div id="enContent" class="infoContent">
 						<p  class="inforTitle">Hello!! I'm TOM YUAN(yuan ,chuan ching)</p>
 						<p class="inforDetail">
 						I am Front-end developer living in taiwan , I graduated from "jinwen university of science and technology",
 						My first F2E job was started in 2014 ,That time i was part-time job and help my company built new official site
-						After that i was wonder to became a Web Front-end developer, Although i was the beginner of this area ,
-						I had strong passion for new technologies,and i'm keep improving my coding skill, there are some website
-						i built which you can view in my work area.
+						After that i was wonder to became a Web Front-end developer,
+						I had strong passion for new technologies,and i'm keep improving my coding skill.<br><br>
+						The current now i'am research node.js and some js framwork (react.js and angular.js).there are some website i built for company and some demo which you can view in my work area.
 						</p>
+					</div>
+					<div id="chContent" class="infoContent">
+						<p class="inforTitle">大家好!! 我叫袁傳青(Tom Yuan)</p>
+						<p class="inforDetail">
+							我是住在台北的前端工程師，我畢業於景文科大資訊工程系，我第一份前端工作開始於2014一間設計公司的網頁設計工讀，而當時負責就是公司官網的前端切版，從那時開始我就對網頁前端開始產生興趣，目前大概又一年多左右的開發經驗，雖然入行時間不算太長但我對這領域還是抱持著很大的熱情，對新技術也相當有研究跟興趣。<br>現在在接觸js framework(react.js跟angular.js)，最近則是在碰node.js 其主要因為自己對js較熟悉，所以想透過node.js來深入backend領域
+							下面有我在之前工作跟接案的網頁作品，另外還有一些自己私底下練習寫的有趣前端作品。
+						</p>
+					</div>	
 						
 					</div>	
 				</div>
@@ -151,8 +159,44 @@
 					<hr>
 				<br>
 				<div class="row">
-					<div class="col-sm-5  col-xs-10 portfolio-item" >
-						<div class="portfolio-link" onclick="showOut(2)">
+					<div class="col-sm-4 col-xs-10 portfolio-item">
+						<div class="portfolio-link" id="portfolio2">
+							<div class="caption">
+								<div class="caption-content"  >
+									<i>
+										Riche88 Baccarat Game (Front-end part)
+									</i>
+								</div>
+							</div>
+							<img src="img/portfolio/demo9.png" class="img-responsive" alt="work1">
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-10 portfolio-item">
+						<div class="portfolio-link" id="portfolio2">
+							<div class="caption">
+								<div class="caption-content"  >
+									<i>
+										Riche88 official website(2016 version)
+									</i>
+								</div>
+							</div>
+							<img src="img/portfolio/demo8.png" class="img-responsive" alt="work1">
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-10 portfolio-item">
+						<div class="portfolio-link" id="portfolio2">
+							<div class="caption">
+								<div class="caption-content"  >
+									<i>
+										"nuibi168" Mental Test Games(2016)
+									</i>
+								</div>
+							</div>
+							<img src="img/portfolio/demo7.png" class="img-responsive" alt="work1">
+						</div>
+					</div>
+					<div class="col-sm-4  col-xs-10 portfolio-item" >
+						<div class="portfolio-link" id="portfolio1">
 							<div class="caption">
 								<div class="caption-content">
 									<i>Qmi App WebSite(2015 version)</i>
@@ -161,8 +205,8 @@
 							<img src="img/portfolio/demo4.png" class="img-responsive" alt="work1">
 						</div>
 					</div>
-					<div class="col-sm-5 col-xs-10 portfolio-item">
-						<div class="portfolio-link" onclick="showOut(1)">
+					<div class="col-sm-4 col-xs-10 portfolio-item">
+						<div class="portfolio-link" id="portfolio2">
 							<div class="caption">
 								<div class="caption-content"  >
 									<i>VMAGE Co., Ltd official website(2014 version)</i>
@@ -179,29 +223,7 @@
 						<div class="close-btn">
 							<i class="fa fa-times fa-2x"></i>
 						</div>
-						<div id="Demo1-Carousel" class="carousel slide"data-ride="carousel">
-							<div class="carousel-inner">
-								<div id="i1" class="item active">
-									<img src="img/portfolio/demo1.png" class="img-responsive">
-								</div>
-								<div id="i2" class="item">
-									<img src="img/portfolio/demo2.png" class="img-responsive">
-								</div>
-								<div id="i3" class="item">
-									<img src="img/portfolio/demo3.png" class="img-responsive">
-								</div>
-							</div>
-							<ol class="carousel-indicators">
-								<li data-target="#Demo1-Carousel" data-slide-to="0" class="active"></li>
-								<li data-target="#Demo1-Carousel" data-slide-to="1"></li>
-								<li data-target="#Demo1-Carousel" data-slide-to="2"></li>
-							</ol>
-							<p class="work-introduce">
-								Site of  VMAGE Co., Ltd , this was 2014 version , I built this site with html5+css+jquery
-								and this was first site i built in RWD.
-							</p>
-						</div>
-						<div id="Demo2-Carousel" class="carousel slide" data-ride="carousel">
+						<div id="Demo1-Carousel" class="carousel slide" data-ride="carousel">
 							<div class="carousel-inner">
 								<div id="i1" class="item active">
 									<img src="img/portfolio/demo4.png" class="img-responsive">
@@ -214,9 +236,9 @@
 								</div>
 							</div>
 							<ol class="carousel-indicators">
-								<li data-target="#Demo2-Carousel" data-slide-to="0" class="active"></li>
-								<li data-target="#Demo2-Carousel" data-slide-to="1"></li>
-								<li data-target="#Demo2-Carousel" data-slide-to="2"></li>
+								<li data-target="#Demo1-Carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#Demo1-Carousel" data-slide-to="1"></li>
+								<li data-target="#Demo1-Carousel" data-slide-to="2"></li>
 							</ol>
 							<p class="work-introduce">
 								Qmi App Product Website,this site was built with css framework(bootstrap),
@@ -224,6 +246,29 @@
 							</p>
 							<a href="https://www.qmi.emome.net/" target="_blank">Visit site</a>
 						</div>
+						<div id="Demo2-Carousel" class="carousel slide"data-ride="carousel">
+							<div class="carousel-inner">
+								<div id="i1" class="item active">
+									<img src="img/portfolio/demo1.png" class="img-responsive">
+								</div>
+								<div id="i2" class="item">
+									<img src="img/portfolio/demo2.png" class="img-responsive">
+								</div>
+								<div id="i3" class="item">
+									<img src="img/portfolio/demo3.png" class="img-responsive">
+								</div>
+							</div>
+							<ol class="carousel-indicators">
+								<li data-target="#Demo2-Carousel" data-slide-to="0" class="active"></li>
+								<li data-target="#Demo2-Carousel" data-slide-to="1"></li>
+								<li data-target="#Demo2-Carousel" data-slide-to="2"></li>
+							</ol>
+							<p class="work-introduce">
+								Site of  VMAGE Co., Ltd , this was 2014 version , I built this site with html5+css+jquery
+								and this was first site i built in RWD.
+							</p>
+						</div>
+						
 					</div>
 			</div>	
 	</section>
@@ -253,7 +298,7 @@
 		</div>
 	</section>
 	<footer>
-		Copyright &copy; Tom Yuan Website 2015
+		Copyright &copy; Tom Yuan Website 2015 - 2016
 	</footer>
 	
 	<!-- jQuery -->
