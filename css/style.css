@@ -10,23 +10,16 @@ body {
 }
 body{
     overflow-x: hidden;
-	background-color:#6495ED;
+	background-color:#f1f1f1;
 }
-section {
-     color:#fff;
-    
-}
+
 section h2 {
     margin: 0;
     font-size: 3em;
 }
 
 p {
-    font-size: 20px;
-}
-
-p.small {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 a,
@@ -72,8 +65,7 @@ top: 0;
 width: 100%;
 height: 100%;
 z-index: -10;
-background: url(img3.jpg) no-repeat;   
-/*background:url(img3.jpg) no-repeat fixed;*/
+background: url(img3.jpg) no-repeat fixed;   
 -webkit-background-size: cover;
 -moz-background-size: cover;
 background-size: cover;
@@ -100,9 +92,9 @@ background-position:center;
 }
 
  .intro-text .hello {
-    font-size: 1.25em;
-    font-weight: 400;
-	 color:white;
+   font-size: 1.25em;
+   font-weight: 400;
+	 color:#fff;
 }
 
 .page-down{
@@ -280,15 +272,17 @@ to {top:-10px;}
 
 .success{
     /*height: 100%;*/
-    color: #fff;
+    color: #000;
     /*background: #6495ED;*/
-    background-color: #68798a;
+    background-color: #dadada;
     /*margin-top: 12%;*/
     padding: 40px 0 0 0;
     text-align: center;
 }
 .head-shot-image{
-  border-radius: 30px;
+  width: 100%;
+  max-width: 332px;
+  border-radius: 50% 50%;
   margin: auto;
 }
 .langContent{
@@ -310,21 +304,95 @@ to {top:-10px;}
   text-align: left;
 }
 /* skill block*/
+
 .skill{
  margin-top:30px;
 }
-/*skill icon*/
-#icon-javascript-alt {
-  /* font-size: 91px; */
-  font-size: 5em;
-  line-height: 1px;
-  color: #FFC107;
+.skillTitle{
+  text-align:center;
+  font-size: 24px; 
+  padding:0px 0px 36px 0px;  
 }
+.skillTitle span{
+  border-bottom:1px solid #000; 
+}
+
+/*skill icon*/
+.iconWrap {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.insideCircle{
+  width: 150px;
+  height: 150px;
+  position:absolute;
+  color:#fff;
+  border-radius: 50%;
+  clip: rect(133px 150px 150px 0px);
+  /*animation:show 5s; */ 
+  -webkit-transition: all 4s ease; /* Safari and Chrome */
+  -moz-transition: all 4s ease; /* Firefox */
+  -ms-transition: all 4s ease; /* IE 9 */
+  -o-transition: all 4s ease; /* Opera */
+  transition: all 4s ease;
+}
+.html{
+  background-color: #FF5722;
+  
+}
+.css3{
+  background-color:#2196F3; 
+  
+}
+.Js{
+  background-color:#FFC107;
+  
+}
+.nodeJS {
+  background-color: #8BC34A;
+}
+.MongoDB{
+  background-color: #795548;
+}
+.iconWrap i{
+  width: 60px;
+  margin-top: 29px;
+}
+
+
 .fa-html5:before {
-  color: #FF5722;
+  font-size: 83px;
+  margin-left: -2px;
 }
 .fa-css3:before{
-  color: #2196F3;
+  font-size: 83px;
+  margin-left: -7px;
+}
+#icon-javascript-alt,.icon-nodejs,.icon-mongodb{
+  font-size: 6em;
+  line-height: 1px;
+}
+.icon-javascript-alt:before,.icon-nodejs:before,.icon-mongodb:before{
+  margin: 22px 0px 0 15px;
+}
+.iconWrap span {
+  position: relative;
+  top: 113px;
+  font-size: 20px;
+}
+.skillWrap {
+  padding-bottom: 25px;
+}
+.skillDetail {
+  margin-top: 10px;
+}
+.skillDetail ul{
+  width:209px;
+  margin:0 auto;
+  padding:0;  
 }
 .skill-row{
 text-align: left;
@@ -339,38 +407,38 @@ margin:30px;
 background:#fff;
 border-radius:25px;
 }
-.progress{
-  height:35px;
-}
-.progress .progress-bar {
-  font-size: 20px;
-  line-height: 31px;
-  background-color:#18bc9c;
-  -webkit-transition: all 2s ease-in; /* Safari */
-  -moz-transition: all 2s ease-in;
-  -o-transition: all 2s ease-in;
-    transition: all 2s ease-in;
-}
+
+
 
 /*work block*/
 #portfolio{
   padding-top: 28px;
   padding-bottom: 28px;
-  background: #68798a;
-  color: #fff;
+  background-color: #dadada;
+  color: #2c3e50;
   text-align: center;
   margin: -3px auto;
 }
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+    transform:scale(0);
+    -webkit-transition: all ease 1s;
+    -moz-transition: all ease 1s;
+    -ms-transition: all ease 1s;
+    -o-transition: all ease 1s;
+    transition: all ease 1s;
+    
 }
-
+@keyframes showOut{
+  from{transform:scale(0.3);}
+  to{transform:scale(1);}
+}
 #portfolio .portfolio-item .portfolio-link {
     display: block;
     position: relative;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 600px;
     cursor: pointer;
 }
 
@@ -379,14 +447,17 @@ border-radius:25px;
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: rgba(24,188,156,.9);
+    background-color: rgba(60, 125, 241,0.8);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
+    -ms-transition: all ease .5s;
+    -o-transition: all ease .5s;
     transition: all ease .5s;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
     opacity: 1;
+    
 }
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content {
@@ -409,9 +480,6 @@ border-radius:25px;
     margin: 0;
 }
 
-/*#portfolio * {
-    z-index: 2;
-}*/
 .my-work {
   display:none;
   position: fixed;
@@ -419,19 +487,28 @@ border-radius:25px;
   width: 100%;
   height: 100%;
   z-index: 1030;
-  float: left;
   top: 0;
-  
 }
 .work-contain{
-    width:80%;
-    height:87%;
-    background:#18bc9c;
+    width: 100%;
+    max-width: 1079px;
+    height: 100%;
+    max-height: 500px;
+    background-color:#6495ED;
     margin: 10px auto;
     text-align: center;
+    font-size: 0.6em;
 }
 .carousel{
-  display: none;
+  /*display: none;*/
+  width: 100%;
+  max-width: 500px;
+  min-width: 296px; 
+  margin: 80px auto;
+}
+.work-introduce {
+    margin-top: 80px;
+    text-align: left;
 }
 .close-btn{
   width: 50px;
@@ -441,14 +518,12 @@ border-radius:25px;
   cursor: pointer;
   z-index: 10;
   margin-top: 15px;
+  margin-left: 39px;
 }
-.carousel-inner{
-  width: 85%;
-  margin-left: 8%;
-}
+
 .carousel-inner .item{
    width: 100%;
-   max-width: 750px;
+   max-width: 500px;
    margin: 20px auto; 
 }
 .carousel-inner div img{
@@ -462,17 +537,17 @@ border-radius:25px;
   color: black;
   margin-top: 2%;
 }
-
+.urlLink {
+  font-size: 20px;
+}
 /*contact block*/
 
 #contact{
 	text-align:center;
   height: 50%;
+  color: #fff;
 }
-/*#contact h4{
-color:#6495ED;
 
-}*/
 .contact-icon{
 	vertical-align:middle;
   margin-top:10%; 
@@ -505,9 +580,7 @@ height: 30px
     font-size: 1.75em;
 }
 /*Navigation*/
-.nav-button{
-/*display:none;*/
-}
+
 .navbar-fixed-top {
     padding: 25px 0;
     -webkit-transition: padding .3s;
@@ -580,18 +653,25 @@ section.success{
     /*width: 258px; */
 }
 /*portfolio*/
-#portfolio{
-height:auto;    
-/*margin-top: 25%;*/
-}
+
+
 /*work*/
+.my-work{
+  overflow-y:scroll; 
+}
 .work-contain {
   height:500px;
- margin: 3% auto;
+  margin: 3% auto;
+}
+.work-introduce {
+  margin-top: 22px;
+}
+.carousel{
+  margin:0 auto; 
 }
 .carousel p{
   font-size: 1.2em;
-  margin-top: 15%;
+  margin-top: 35px;
 }
 
 /*contact*/
@@ -604,12 +684,8 @@ height:auto;
 .contain-icon{
     margin-top:20px;
 }
-}
-/*@media(min-width:1025px){
-#portfolio{
-    height:340px; 
+
 }
 
-}*/
 
 
