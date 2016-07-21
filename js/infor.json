@@ -1,4 +1,24 @@
-{
-	"en": "hello , i m tom yuan",
-	"ch": "你好我叫傳青"
-}
+[
+	{
+		"ch":"當兵前的作品，主要是負責切板跟使用jquery製作簡單功能，而網頁是RWD(響應式網頁)，並無使用任何框架，切版跟刻樣式是我自己完成。",
+		"en":"Site of  VMAGE Co., Ltd , this was 2014 version , I built this site with html5+css+jquery and this was first site i built in RWD."
+	},
+	{
+		"ch":"為企業通訊軟體的產品官網，切板時使用css框架(bootstrap)，另外客戶聯繫表單使用 ajax串接後台api。",
+		"en":"Enterprise communications App Product Website,This site was built with css framework(bootstrap) and some animate effect was built by myself. The contact form was use AJAX to submit custom content and connect api."
+	},
+	{
+	  "ch":"百家樂的網頁遊戲，我主要負責版面切版跟前端功能皆開發完成，而遊戲結果運算在後端進行，前端則為發牌動態顯示，以及下注功能的驗證。",
+	  "en":"I handle the all front-end part of the game,the mainly part was betting area function and dealing card function."
+	},
+	{
+	  "ch":"這是幫公司寫的心理測驗網頁，主要框架是以bootstrap為主，然後從後台api串接資料顯示在頁面上。",
+	  "en":"This is a Mental Test Games,I use bootstrap for layout and the fornt-end data was got from backend api."
+	},
+	{
+	  "ch":"Riche88最新的官網，新官網的規模較大，我主要負責了網頁板跟手機板的前端，另外網頁版除了主頁外，還有使用者的設定頁面跟遊戲頁等共10多頁，所有頁面效果跟一些頁面的驗證功能也都是我獨立開發完成。",
+	  "en":"This is New Riche88 website , I responsible for all front-end function and effect, there are pc version and moblie version."
+	}
+
+
+]
