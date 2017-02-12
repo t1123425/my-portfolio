@@ -39,24 +39,20 @@ $(function(){
 	$('#ch').click(function(){
 		$('#chContent').show().siblings('.infoContent').hide();
 	});
-
+	var checkPointer = true;
+	var section1 = $('#skill').offset().top;
+	var section2 =  $('#portfolio').offset().top;
 	$(window).on('scroll',function(){
-		var winWidth = $(window).width();
-
-		if($(this).scrollTop() > 1000 &&  winWidth > 796){
+		if($(this).scrollTop() > section1){
 			// $(this).off('scroll');
-			setTimeout(function(){
-				showProgress();
-			},500);
-			
-		}else if($(this).scrollTop() > 1200 && winWidth < 426){
-			setTimeout(function(){
-				showProgress();
-			},500);
+			if(checkPointer === true){
+				setTimeout(function(){
+					showProgress();
+				},100);
+			}
+			checkPointer = false;
 		}
-		if($(this).scrollTop() > 2000 &&  winWidth > 796){
-			showOut();
-		}else if($(this).scrollTop() > 2800 && winWidth < 426){
+		if($(this).scrollTop() > section2){
 			showOut();
 		}
 	});
