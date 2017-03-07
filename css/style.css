@@ -668,8 +668,10 @@ section.success{
   overflow-y:scroll; 
 }
 .work-contain {
-  height:500px;
+  height: auto;
+  max-height: none;
   margin: 3% auto;
+  padding-bottom: 10px;
 }
 .work-introduce {
   margin-top: 22px;
