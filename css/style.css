@@ -532,6 +532,9 @@ border-radius:25px;
 .carousel-indicators{
   bottom: auto !important;
 }
+.carousel-indicators li{
+  margin:0 3px;
+}
 .carousel p{
   font-size: 14px;
   color: black;
