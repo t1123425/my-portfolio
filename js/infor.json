@@ -18,6 +18,10 @@
 	{
 	  "ch":"Riche88最新的官網，新官網的規模較大，我主要負責了網頁板跟手機板的前端，另外網頁版除了主頁外，還有使用者的設定頁面跟遊戲頁等共10多頁，所有頁面效果跟一些頁面的驗證功能也都是我獨立開發完成。",
 	  "en":"This is New Riche88 website , I responsible for all front-end function and effect, there are pc version and moblie version."
+	},
+	{
+		"ch":"這是我一款我用Egret遊戲引擎製作的小遊戲 ，開發語言主要是TypeScript ，玩法則是限時內點擊黑框 ，若點到白框則遊戲結束。",
+		"en":"This web Game which i built by Egret Game engines, the programming language is TypeScript, the Game rules is don't Touch the White rect In time limit,if you touch the white Rect then Game Over."
 	}
 
 

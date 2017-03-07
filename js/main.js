@@ -60,7 +60,7 @@ $(function(){
 	function showProgress(){
 		$('#htmlValue').add('#cssValue').text(90);
 		$('#jsValue').text(80);
-		$('#nodeValue').add('#dbValue').text(60);
+		$('#nodeValue').add('#dbValue').text(50);
 		$('.value').each(function () {
 		    $(this).prop('Counter',0).animate({
 		        Counter: $(this).text()
@@ -175,5 +175,10 @@ $(function(){
 	$('#portfolio5').click(function(){
 		workLoad(5,10);
 		getWorkData(4);
+	});
+	$('#portfolio6').click(function(){
+		workLoad(6,3);
+		getWorkData(5);
+		$('.websiteLink').html("<a href='https://t1123425.github.io/EgretGame/DontTouchWhiteRect/' target='_blank' class='urlLink'>Play the Game</a>");
 	});
 });
