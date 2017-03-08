@@ -547,28 +547,94 @@ border-radius:25px;
 
 #contact{
 	text-align:center;
-  height: 50%;
   color: #fff;
+  padding:60px 0;
+  min-height:350px; 
 }
 
 .contact-icon{
 	vertical-align:middle;
-  margin-top:10%; 
+  margin-top:60px; 
 }
 
+/*formContact*/
+#contactForm {
+  max-width: 960px;
+  width: calc(100% - 10px);
+  margin: 60px auto;
+  text-align:left;
+}
+/* line 27, ../sass/print.scss */
+#contactForm input[type="submit"] {
+  background-color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 0;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  color: #000;
+}
+/* line 36, ../sass/print.scss */
+#contactForm input[type="submit"]:hover {
+  opacity: 0.6;
+}
+/* line 39, ../sass/print.scss */
+#contactForm label {
+  display: block;
+  margin: 10px 0;
+}
+
+/* line 44, ../sass/print.scss */
+.formInputBox p {
+  text-align: right;
+}
+
+/* line 47, ../sass/print.scss */
+.formInput {
+  display: block;
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+  text-indent: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* line 57, ../sass/print.scss */
+.formTextarea {
+  width: calc(100% - 5px);
+  border: 1px solid #ccc;
+  text-indent: 10px;
+  margin-bottom: 20px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* line 64, ../sass/print.scss */
+.input30 {
+  max-width: 300px;
+}
 
 
 /*footer*/
 footer{
-text-align:center;
-background:white;
-height: 30px
+  text-align:center;
+  background:#fff;
+  /*height: 30px;*/
+  padding: 10px 0;
 }
 div#fb-root {
   position: relative;
-    /* margin-top: 171px; */
-    top: 60px;
-    margin-left: 7px;
+  /* margin-top: 171px; */
+  top: 60px;
+  margin-left: 7px;
 }
 @media(min-width:768px) {
 
@@ -689,7 +755,7 @@ section.success{
    height:auto; 
 }
 .contact-icon{
- height: 280px;
+ /*height: 280px;*/
 }
 .contain-icon{
     margin-top:20px;
