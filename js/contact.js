@@ -9463,8 +9463,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // 	storageBucket: "contactdatabase-212d0.appspot.com",
 // 	messagingSenderId: "275585378539"
 // };
-// firebase.initializeApp(config);
-
+firebase.initializeApp(config);
 var titleName = "Contact with me thank!!";
 
 var CreateTitle = function (_React$Component) {
@@ -9571,8 +9570,8 @@ var FormInput = function (_React$Component3) {
 					this.setState({ errorMessage: 'email validate wrong !!' });
 				}
 			}
-			// console.log(event.target,'current');
-			// console.log(validCheck,'checkState');
+			console.log(event.target, 'current');
+			console.log(validCheck, 'checkState');
 			this.props.sendValue(event.target.value, this.props.inputName);
 		}
 	}, {
@@ -9694,7 +9693,7 @@ var CreateForm = function (_React$Component4) {
 				}
 			}
 			if (check == true && validCheck == true) {
-
+				alert("Thank for your Message");
 				// firebase.auth().signInWithEmailAndPassword("t1123425@gmail.com","tommax23672377")
 				// 	.then(
 				// 	function(user){
@@ -9708,8 +9707,7 @@ var CreateForm = function (_React$Component4) {
 				// 		console.log(error,'error');
 				// 	});
 				axios.post("https://formspree.io/t1123425@yahoo.com.tw", { name: ContactName, email: ContactEmail, message: ContactMessage }).then(function (response) {
-					console.log(response.data);
-					alert("Thank for your Message");
+					console.log("The Message already send thank you !!");
 				}).catch(function (error) {
 					console.log(error);
 				});
