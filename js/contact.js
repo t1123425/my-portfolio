@@ -9456,14 +9456,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // require('../style/stylesheets/print.css');
 
 // Initialize Firebase
-var config = {
-	apiKey: "AIzaSyCODvDZx93FbB_cPuxYLJi9CN1tKZ3aRYw",
-	authDomain: "contactdatabase-212d0.firebaseapp.com",
-	databaseURL: "https://contactdatabase-212d0.firebaseio.com",
-	storageBucket: "contactdatabase-212d0.appspot.com",
-	messagingSenderId: "275585378539"
-};
-firebase.initializeApp(config);
+// const config = {
+// 	apiKey: "AIzaSyCODvDZx93FbB_cPuxYLJi9CN1tKZ3aRYw",
+// 	authDomain: "contactdatabase-212d0.firebaseapp.com",
+// 	databaseURL: "https://contactdatabase-212d0.firebaseio.com",
+// 	storageBucket: "contactdatabase-212d0.appspot.com",
+// 	messagingSenderId: "275585378539"
+// };
+// firebase.initializeApp(config);
+
 var titleName = "Contact with me thank!!";
 
 var CreateTitle = function (_React$Component) {
@@ -9570,8 +9571,8 @@ var FormInput = function (_React$Component3) {
 					this.setState({ errorMessage: 'email validate wrong !!' });
 				}
 			}
-			console.log(event.target, 'current');
-			console.log(validCheck, 'checkState');
+			// console.log(event.target,'current');
+			// console.log(validCheck,'checkState');
 			this.props.sendValue(event.target.value, this.props.inputName);
 		}
 	}, {
@@ -9693,15 +9694,24 @@ var CreateForm = function (_React$Component4) {
 				}
 			}
 			if (check == true && validCheck == true) {
-				alert("Thank for your Message");
-				firebase.auth().signInWithEmailAndPassword("t1123425@gmail.com", "tommax23672377").then(function (user) {
-					firebase.database().ref('contacts').push({
-						name: ContactName,
-						email: ContactEmail,
-						message: ContactMessage
-					});
+
+				// firebase.auth().signInWithEmailAndPassword("t1123425@gmail.com","tommax23672377")
+				// 	.then(
+				// 	function(user){
+				// 		firebase.database().ref('contacts').push({
+				// 			name:ContactName,
+				// 			email:ContactEmail,
+				// 			message:ContactMessage
+				// 		});
+				// 	}).catch(
+				// 	function(error){
+				// 		console.log(error,'error');
+				// 	});
+				axios.post("https://formspree.io/t1123425@yahoo.com.tw", { name: ContactName, email: ContactEmail, message: ContactMessage }).then(function (response) {
+					console.log(response.data);
+					alert("Thank for your Message");
 				}).catch(function (error) {
-					console.log(error, 'error');
+					console.log(error);
 				});
 				this.setState({ name: "" });
 				this.setState({ email: "" });
@@ -9781,6 +9791,7 @@ var CreateForm = function (_React$Component4) {
 						'/500'
 					)
 				),
+				_react2.default.createElement('input', { type: 'text', name: '_gotcha', className: 'noDisplay' }),
 				_react2.default.createElement('input', { type: 'submit', name: 'submit', value: 'submit' })
 			);
 		}
