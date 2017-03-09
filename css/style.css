@@ -604,8 +604,11 @@ border-radius:25px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
+  color: #000;
 }
-
+.formInput.error{
+  background-color:#e91e63;
+}
 /* line 57, ../sass/print.scss */
 .formTextarea {
   width: calc(100% - 5px);
@@ -615,6 +618,7 @@ border-radius:25px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
+  color: #000;
 }
 
 /* line 64, ../sass/print.scss */

@@ -9455,6 +9455,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // require('../style/stylesheets/print.css');
 
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyCODvDZx93FbB_cPuxYLJi9CN1tKZ3aRYw",
+	authDomain: "contactdatabase-212d0.firebaseapp.com",
+	databaseURL: "https://contactdatabase-212d0.firebaseio.com",
+	storageBucket: "contactdatabase-212d0.appspot.com",
+	messagingSenderId: "275585378539"
+};
+firebase.initializeApp(config);
 var titleName = "Contact with me thank!!";
 
 var CreateTitle = function (_React$Component) {
@@ -9512,6 +9521,8 @@ var Label = function (_React$Component2) {
 var formCheck = false;
 var valueMessage = "";
 var validCheck = false;
+var letterLimit = 0;
+var errorState = "";
 
 var FormInput = function (_React$Component3) {
 	_inherits(FormInput, _React$Component3);
@@ -9521,60 +9532,60 @@ var FormInput = function (_React$Component3) {
 
 		var _this3 = _possibleConstructorReturn(this, (FormInput.__proto__ || Object.getPrototypeOf(FormInput)).call(this, props));
 
-		_this3.state = { letterCounter: 0, errorMessage: "" };
-		_this3.checkValuelength = _this3.checkValuelength.bind(_this3);
+		_this3.state = { errorMessage: "", className: "formInput" };
+		_this3.sendValue = _this3.sendValue.bind(_this3);
 		return _this3;
 	}
 
 	_createClass(FormInput, [{
-		key: 'checkValuelength',
-		value: function checkValuelength(event) {
-			var formInputName = this.props;
-			var inputFormValue = "";
-			valueMessage = "";
-			this.setState({ errorMessage: '' });
-			this.setState({ letterCounter: event.target.value.length });
-			if (formInputName.inputName == "Name") {
-				if (this.state.letterCounter > 6) {
-					this.setState({ errorMessage: 'too much letter' });
+		key: 'sendValue',
+		value: function sendValue(event) {
+			this.setState({ errorMessage: "" });
+			if (this.props.inputName == "name") {
+				letterLimit = 20;
+				if (event.target.value.length == 20) {
+					this.setState({ errorMessage: "Too long for input name" });
 				}
 			} else {
-				if (this.state.letterCounter > 50) {
-					this.setState({ errorMessage: 'too much for email' });
+				letterLimit = 50;
+				if (event.target.value.length == 50) {
+					this.setState({ errorMessage: "Too long for emailAddress" });
 				}
 			}
+			this.props.FormValueSend(event.target.value, this.props.inputName);
 		}
 	}, {
 		key: 'validation',
 		value: function validation(event) {
 			var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			var validateEmail = '';
+			this.setState({ className: 'formInput' });
 			if (this.props.inputName == 'email') {
 				validateEmail = emailRegex.test(event.target.value);
 				if (validateEmail == true) {
 					validCheck = true;
 				} else {
 					validCheck = false;
+					this.setState({ className: 'formInput error' });
 					this.setState({ errorMessage: 'email validate wrong !!' });
 				}
 			}
+			console.log(event.target, 'current');
 			console.log(validCheck, 'checkState');
 			this.props.sendValue(event.target.value, this.props.inputName);
 		}
 	}, {
 		key: 'render',
 		value: function render() {
+
 			return _react2.default.createElement(
 				'div',
 				{ className: 'formInputBox' },
-				_react2.default.createElement('input', { type: 'text', id: this.props.inputName, className: 'formInput', placeholder: this.props.inputName, onChange: this.checkValuelength, onBlur: this.validation.bind(this) }),
+				_react2.default.createElement('input', { type: 'text', id: this.props.inputName, maxLength: letterLimit, className: this.state.className, value: this.props.inputValue, placeholder: this.props.inputName, onChange: this.sendValue, onBlur: this.validation.bind(this) }),
 				_react2.default.createElement(
 					'p',
 					null,
-					this.state.errorMessage,
-					' ',
-					this.state.letterCounter,
-					'/10'
+					this.state.errorMessage
 				)
 			);
 		}
@@ -9654,15 +9665,14 @@ var CreateForm = function (_React$Component4) {
 		var _this4 = _possibleConstructorReturn(this, (CreateForm.__proto__ || Object.getPrototypeOf(CreateForm)).call(this, props));
 
 		_this4.state = {
-			messageArray: [],
 			name: '',
 			email: '',
-			message: '',
-			check: false
+			message: ''
 		};
 		_this4.sendValue = _this4.sendValue.bind(_this4);
 		_this4.formSubmit = _this4.formSubmit.bind(_this4);
 		_this4.messageChange = _this4.messageChange.bind(_this4);
+		_this4.FormValueSend = _this4.FormValueSend.bind(_this4);
 		return _this4;
 	}
 
@@ -9670,16 +9680,59 @@ var CreateForm = function (_React$Component4) {
 		key: 'formSubmit',
 		value: function formSubmit(event) {
 			event.preventDefault();
-			if (this.state.name !== "" && this.state.email !== "" && this.state.message !== "" && validCheck == true) {
-				alert("ok");
-				// 複製array
-				var copyArray = this.state.messageArray.slice();
-				// const formMessage =  copyArray.concat([{name:this.state.name,email:this.state.email,message:this.state.message,id: Date.now()}]);
-			} else if (this.state.name !== "" && this.state.email !== "" && this.state.message !== "" && validCheck == false) {
-				alert('please make corrent format');
-			} else {
-				alert("please fill the form");
+			var check = true;
+			var ContactName = this.state.name;
+			var ContactEmail = this.state.email;
+			var ContactMessage = this.state.message;
+			var thisStateKey = Object.keys(this.state);
+			for (var i = 0; i < thisStateKey.length; i++) {
+				if (this.state[thisStateKey[i]] == "") {
+					alert('Please fill ' + thisStateKey[i]);
+					check = false;
+					return false;
+				}
 			}
+			if (check == true && validCheck == true) {
+				alert("Thank for your Message");
+				firebase.auth().signInWithEmailAndPassword("t1123425@gmail.com", "tommax23672377").then(function (user) {
+					firebase.database().ref('contacts').push({
+						name: ContactName,
+						email: ContactEmail,
+						message: ContactMessage
+					});
+				}).catch(function (error) {
+					console.log(error, 'error');
+				});
+				this.setState({ name: "" });
+				this.setState({ email: "" });
+				this.setState({ message: "" });
+			}
+			// console.log(check);
+			// if(this.state.name !== "" && this.state.email !== "" && this.state.message !== "" && this.state.test !== "" && validCheck == true){
+			// 	alert("Thank for your Message");
+
+			// 	console.log(ContactName,ContactEmail,ContactMessage,this.state.test);
+			// 	firebase.auth().signInWithEmailAndPassword("t1123425@gmail.com","tommax23672377")
+			// 		.then(
+			// 		function(user){
+			// 			firebase.database().ref('contacts').push({
+			// 				name:ContactName,
+			// 				email:ContactEmail,
+			// 				message:ContactMessage
+			// 			});
+			// 		}).catch(
+			// 		function(error){
+			// 			console.log(error,'error');
+			// 		});
+			// 		this.setState({name:""});
+			// 		this.setState({email:""});
+			// 		this.setState({message:""});					
+			// }else if(this.state.name !== "" && this.state.email !== "" && this.state.message !== ""&& this.state.test !== "" && validCheck == false){
+			// 	alert('please make corrent format');
+			// }
+			// else{
+			// 	alert("please fill the form");
+			// }
 		}
 	}, {
 		key: 'sendValue',
@@ -9687,15 +9740,21 @@ var CreateForm = function (_React$Component4) {
 			var _obj;
 
 			var state = this.state;
-			var stateNumber = Object.keys(state).length;
-			var obj = (_obj = {}, _defineProperty(_obj, target, e), _defineProperty(_obj, 'check', validCheck), _obj);
+			var stateNumber = Object.keys(state).length; //計算Object key長度
+			// console.log(stateNumber,'stateNumber');
+			var obj = (_obj = {}, _defineProperty(_obj, target, e), _defineProperty(_obj, 'check', validCheck), _obj); //填入該輸入框值
 			this.setState(obj);
 		}
 	}, {
 		key: 'messageChange',
 		value: function messageChange(e) {
 			this.setState({ message: e.target.value });
-			console.log(this.state.message);
+			// console.log(this.state.message.length);
+		}
+	}, {
+		key: 'FormValueSend',
+		value: function FormValueSend(e, target) {
+			this.setState(_defineProperty({}, target, e));
 		}
 	}, {
 		key: 'render',
@@ -9707,11 +9766,21 @@ var CreateForm = function (_React$Component4) {
 				{ action: '#', id: 'contactForm', onSubmit: this.formSubmit },
 				_react2.default.createElement(CreateTitle, { title: 'Contact with me!!' }),
 				_react2.default.createElement(Label, { labelTitle: 'Name' }),
-				_react2.default.createElement(FormInput, { inputName: 'name', value: this.state.name, sendValue: this.sendValue, ref: 'name' }),
+				_react2.default.createElement(FormInput, { inputName: 'name', FormValueSend: this.FormValueSend, inputValue: this.state.name, sendValue: this.sendValue, ref: 'name' }),
 				_react2.default.createElement(Label, { labelTitle: 'Email' }),
-				_react2.default.createElement(FormInput, { inputName: 'email', value: this.state.email, sendValue: this.sendValue, ref: 'email' }),
+				_react2.default.createElement(FormInput, { inputName: 'email', FormValueSend: this.FormValueSend, inputValue: this.state.email, sendValue: this.sendValue, ref: 'email' }),
 				_react2.default.createElement(Label, { labelTitle: 'Message' }),
-				_react2.default.createElement('textarea', (_React$createElement = { name: '', id: '', cols: '30', className: 'formTextarea' }, _defineProperty(_React$createElement, 'id', 'message'), _defineProperty(_React$createElement, 'placeholder', 'Message'), _defineProperty(_React$createElement, 'onBlur', this.messageChange), _defineProperty(_React$createElement, 'rows', '10'), _defineProperty(_React$createElement, 'ref', 'textarea'), _React$createElement)),
+				_react2.default.createElement(
+					'div',
+					{ className: 'formInputBox' },
+					_react2.default.createElement('textarea', (_React$createElement = { name: '', id: '', cols: '30', className: 'formTextarea' }, _defineProperty(_React$createElement, 'id', 'message'), _defineProperty(_React$createElement, 'placeholder', 'Message'), _defineProperty(_React$createElement, 'onChange', this.messageChange), _defineProperty(_React$createElement, 'rows', '10'), _defineProperty(_React$createElement, 'ref', 'textarea'), _defineProperty(_React$createElement, 'value', this.state.message), _defineProperty(_React$createElement, 'maxLength', '500'), _React$createElement)),
+					_react2.default.createElement(
+						'p',
+						null,
+						this.state.message.length,
+						'/500'
+					)
+				),
 				_react2.default.createElement('input', { type: 'submit', name: 'submit', value: 'submit' })
 			);
 		}
