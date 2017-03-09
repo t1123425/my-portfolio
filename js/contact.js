@@ -9463,7 +9463,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // 	storageBucket: "contactdatabase-212d0.appspot.com",
 // 	messagingSenderId: "275585378539"
 // };
-firebase.initializeApp(config);
+// firebase.initializeApp(config);
 var titleName = "Contact with me thank!!";
 
 var CreateTitle = function (_React$Component) {
@@ -9707,7 +9707,7 @@ var CreateForm = function (_React$Component4) {
 				// 		console.log(error,'error');
 				// 	});
 				axios.post("https://formspree.io/t1123425@yahoo.com.tw", { name: ContactName, email: ContactEmail, message: ContactMessage }).then(function (response) {
-					console.log("The Message already send thank you !!");
+					console.log("Thank for your Message");
 				}).catch(function (error) {
 					console.log(error);
 				});
