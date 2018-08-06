@@ -74,7 +74,7 @@ $(function(){
 		});
 
 		$('.html').add('.css3').css('clip','rect(10px 150px 150px 0px)');
-		$('.Js').css('clip','rect(20px 150px 150px 0px)');
+		$('.Js,.Egret,.createJs').css('clip','rect(20px 150px 150px 0px)');
 		$('.nodeJS').add('.MongoDB').css('clip','rect(45px 150px 150px 0px)');
 		
 	}
@@ -180,5 +180,10 @@ $(function(){
 		workLoad(6,3);
 		getWorkData(5);
 		$('.websiteLink').html("<a href='https://t1123425.github.io/EgretGame/DontTouchWhiteRect/' target='_blank' class='urlLink'>Play the Game</a>");
+	});
+	$('#portfolio7').click(function(){
+		workLoad(7,3);
+		getWorkData(6);
+		$('.websiteLink').html("<a href='https://t1123425.github.io/Slot-Game/' target='_blank' class='urlLink'>Play the Game</a>");
 	});
 });

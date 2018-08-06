@@ -326,6 +326,9 @@ to {top:-10px;}
     border-radius: 50%;
 }
 .insideCircle{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   width: 150px;
   height: 150px;
   position:absolute;
@@ -339,6 +342,11 @@ to {top:-10px;}
   -o-transition: all 4s ease; /* Opera */
   transition: all 4s ease;
 }
+.iconWrap .insideCircle span{
+   display:inline-block;
+   font-size: 20px;
+   top: 0;
+}
 .html{
   background-color: #FF5722;
   
@@ -349,7 +357,6 @@ to {top:-10px;}
 }
 .Js{
   background-color:#FFC107;
-  
 }
 .nodeJS {
   background-color: #8BC34A;
@@ -357,9 +364,16 @@ to {top:-10px;}
 .MongoDB{
   background-color: #795548;
 }
+.Egret {
+  background-color: black;
+}
+.createJs {
+  background-color: #ffef89;
+  color:#4c6575;
+}
 .iconWrap i{
-  width: 60px;
-  margin-top: 29px;
+  /* width: 60px;
+  margin-top: 29px; */
 }
 
 
@@ -373,7 +387,7 @@ to {top:-10px;}
 }
 #icon-javascript-alt,.icon-nodejs,.icon-mongodb{
   font-size: 6em;
-  line-height: 1px;
+  /* line-height: 1px; */
 }
 .icon-javascript-alt:before,.icon-nodejs:before,.icon-mongodb:before{
   margin: 22px 0px 0 15px;

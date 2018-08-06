@@ -20,8 +20,12 @@
 	  "en":"This is New Riche88 website , I responsible for all front-end function and effect, there are pc version and moblie version."
 	},
 	{
-		"ch":"這是我一款我用Egret遊戲引擎製作的小遊戲 ，開發語言主要是TypeScript ，玩法則是限時內點擊黑框 ，若點到白框則遊戲結束。",
-		"en":"This web Game which i built by Egret Game engines, the programming language is TypeScript, the Game rules is don't Touch the White rect In time limit,if you touch the white Rect then Game Over."
+		"ch":"這是我一款用Egret遊戲引擎製作的小遊戲 ，開發語言主要是TypeScript ，玩法則是限時內點擊黑框 ，若點到白框則遊戲結束。",
+		"en":"This web Game which i built by Egret game engines, the programming language is TypeScript, the Game rules is don't Touch the White rect In time limit,if you touch the white Rect then Game Over."
+	},
+	{
+		"ch":"這是我用Egret遊戲引擎製作的老虎機，遊戲的一些素材是我從個不同的素材開源網站去蒐集(有附上素材來源)，設計上參考一些市面的老虎機，這個作品算是充分運用了egret引擎所提供的各項效果跟工具，包含介面編排的eui系統，資源加載的RES系統，開發動態效果的tween跟movieClip跟粒子系統等",
+		"en":"This slot game is built By Egret game engines,This example makes full use of the various functions of this game engine. include:EUI system(Game layout),RES system(Game Resource loading),Tween & movieClip(Game Animation),Particle system..etc,and all the function and architecture is made by myself."
 	}
 
 
