@@ -186,4 +186,9 @@ $(function(){
 		getWorkData(6);
 		$('.websiteLink').html("<a href='https://t1123425.github.io/Slot-Game/' target='_blank' class='urlLink'>Play the Game</a>");
 	});
+	$('#portfolio8').click(function(){
+		workLoad(8,3);
+		getWorkData(7);
+		$('.websiteLink').html("<a href='http://www.inglemirepharm.tw/' target='_blank' class='urlLink'>Visit site</a>");
+	});
 });

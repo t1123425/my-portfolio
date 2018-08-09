@@ -700,7 +700,10 @@ div#fb-root {
     text-align:center;
 }
  #portfolio .portfolio-item {
-    margin: 0 0 30px;
+    margin: 0 15px 30px;
+    display: inline-block;
+    width: 30%;
+
 }
 
 }
