@@ -2,8 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import store from './store'
-import 'normalize.css'
-import './index.css'
+import 'purecss'
+import './style/reset.local.css'
+import './style/main.css'
 
 import App from './App'
 
