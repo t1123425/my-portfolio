@@ -9,4 +9,4 @@ const Work: React.FC = () => {
   )
 }
 
-export default memo(Work);
+export default memo(Work)

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { NavbarWrap } from './style'
+import { NavbarWrap, MenuBar } from './style'
 
 interface NavLinks {
   name: string
@@ -20,14 +20,23 @@ const NavLinksArr: NavLinks[] = [
     path: '/work',
   },
 ]
-export const Navbar: React.FC = () => (
-  <NavbarWrap>
-    <ul className="navLinksList">
-      {NavLinksArr.map((e) => (
-        <li>
-          <NavLink to={e.path}>{e.name}</NavLink>
-        </li>
-      ))}
-    </ul>
-  </NavbarWrap>
-)
+export const Navbar: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  return (
+    <NavbarWrap bgColor="#013a63">
+      <MenuBar
+        className={menuOpen ? 'active' : ''}
+        onClick={() => {
+          setMenuOpen(!menuOpen)
+        }}
+      ></MenuBar>
+      <ul className={'navLinksList ' + (menuOpen ? 'active' : '')}>
+        {NavLinksArr.map((e) => (
+          <li>
+            <NavLink to={e.path}>{e.name}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </NavbarWrap>
+  )
+}
