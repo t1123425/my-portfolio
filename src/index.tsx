@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import 'purecss'
 import './style/reset.local.css'
-import './style/main.css'
+import './style/main.scss'
 
 import App from './App'
 

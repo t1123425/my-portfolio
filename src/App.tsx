@@ -10,13 +10,16 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="container">
+      <main className="container">
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/about" component={About} />
           <Route path="/work" component={Work} />
         </Switch>
-      </div>
+      </main>
+      <footer>
+        <p className="text-center">Copyright © 2022 Tom Yuan Website</p>
+      </footer>
     </BrowserRouter>
   )
 }

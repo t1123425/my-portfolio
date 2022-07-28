@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { NavbarWrap, MenuBar } from './style'
+import { HeaderWrap, NavWrap, MenuBar } from './style'
 
 interface NavLinks {
   name: string
@@ -23,20 +23,25 @@ const NavLinksArr: NavLinks[] = [
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <NavbarWrap bgColor="#013a63">
+    <HeaderWrap bgColor="#013a63">
       <MenuBar
         className={menuOpen ? 'active' : ''}
+        size="35px"
         onClick={() => {
           setMenuOpen(!menuOpen)
         }}
-      ></MenuBar>
-      <ul className={'navLinksList ' + (menuOpen ? 'active' : '')}>
-        {NavLinksArr.map((e) => (
-          <li>
-            <NavLink to={e.path}>{e.name}</NavLink>
-          </li>
-        ))}
-      </ul>
-    </NavbarWrap>
+      >
+        <span className="bar"></span>
+      </MenuBar>
+      <NavWrap className="max-width-container">
+        <ul className={'navLinksList ' + (menuOpen ? 'active' : '')}>
+          {NavLinksArr.map((e) => (
+            <li>
+              <NavLink to={e.path}>{e.name}</NavLink>
+            </li>
+          ))}
+        </ul>
+      </NavWrap>
+    </HeaderWrap>
   )
 }
