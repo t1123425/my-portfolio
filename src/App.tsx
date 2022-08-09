@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
+import axios from './plugins/axios'
 import { Navbar } from './components/Navbar'
 import { About } from './pages/About'
 import Home from './pages/Home'
 import Work from './pages/Work'
 
+function LoadWorkData() {
+  axios
+    .get('/databases/(default)/documents/work')
+    .then((e) => {
+      console.log('data', e)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
+}
 const App: React.FC = () => {
+  useEffect(() => {
+    LoadWorkData()
+  }, [])
   return (
     <BrowserRouter>
       <Navbar />

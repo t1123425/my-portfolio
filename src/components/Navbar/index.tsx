@@ -35,8 +35,8 @@ export const Navbar: React.FC = () => {
       </MenuBar>
       <NavWrap className="max-width-container">
         <ul className={'navLinksList ' + (menuOpen ? 'active' : '')}>
-          {NavLinksArr.map((e) => (
-            <li>
+          {NavLinksArr.map((e, i) => (
+            <li key={i}>
               <NavLink to={e.path}>{e.name}</NavLink>
             </li>
           ))}
