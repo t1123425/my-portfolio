@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { updateWorkData } from './features/workData/actions'
 import axios from './plugins/axios'
 import { Navbar } from './components/Navbar'
 import { About } from './pages/About'
 import Home from './pages/Home'
 import Work from './pages/Work'
 import { initializeApp } from 'firebase/app'
-import { getStorage, ref, getDownloadURL } from 'firebase/storage'
+// import { getStorage, ref, getDownloadURL } from 'firebase/storage'
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -19,28 +21,55 @@ const firebaseConfig = {
 }
 
 // Initialize Firebase
-function LoadStorageImg() {
-  initializeApp(firebaseConfig)
-  const storage = getStorage()
-  const spaceRef = ref(storage, 'AppDownloadPlatform/demo1.png')
-  getDownloadURL(spaceRef).then((url) => {
-    console.log('url', url)
-  })
-}
-function LoadWorkData() {
-  axios
-    .get(process.env.REACT_APP_API_ID + '/databases/(default)/documents/work')
-    .then((e) => {
-      console.log('data', e)
-      LoadStorageImg()
+// async function LoadStorageImg(path: string) {
+//   const storage = getStorage()
+//   const spaceRef = ref(storage, `${path}/demo1.png`)
+//   try {
+//     const imgUrl = await getDownloadURL(spaceRef)
+//     console.log(imgUrl)
+//   } catch (error) {
+//     console.error(error)
+//   }
+// }
+async function LoadWorkData() {
+  try {
+    const storeData = await axios.get(
+      process.env.REACT_APP_API_ID + '/databases/(default)/documents/work'
+    )
+    const workStoreData = storeData.data.documents
+    //console.log('storeDATA', workStoreData)
+    const dataArray = workStoreData.map((e: any) => {
+      const workData = {
+        name: e.fields.workName.stringValue,
+        link: e.fields.worklink.stringValue,
+        description: e.fields.workDescription.stringValue,
+        imgSrc: '',
+      }
+      return workData
     })
-    .catch((err) => {
-      console.error(err)
-    })
+    return dataArray
+    // const workImg = await LoadStorageImg()
+  } catch (error) {
+    console.error(error)
+  }
+  // axios
+  //   .get(process.env.REACT_APP_API_ID + '/databases/(default)/documents/work')
+  //   .then((e) => {
+  //     console.log('data', e)
+  //   })
+  //   .catch((err) => {
+  //     console.error(err)
+  //   })
 }
 const App: React.FC = () => {
+  const dispatch = useDispatch()
   useEffect(() => {
-    LoadWorkData()
+    initializeApp(firebaseConfig)
+    const asyncEnv = async () => {
+      const dataArray = await LoadWorkData()
+      dispatch(updateWorkData(dataArray))
+    }
+    asyncEnv()
   }, [])
   return (
     <BrowserRouter>
