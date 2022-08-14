@@ -1,15 +1,9 @@
 import { UPDATE_WORKDATA } from './actionTypes'
 import { WorkDataActionTypes, WorkDataType, WorkDataState } from './types'
 
+//
 const initWorkDataArray: WorkDataState = {
-  workDataArray: [
-    {
-      name: '',
-      description: '',
-      link: '',
-      imgSrc: '',
-    },
-  ],
+  workDataArray: [],
 }
 
 export default (
