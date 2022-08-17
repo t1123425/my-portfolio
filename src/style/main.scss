@@ -14,7 +14,15 @@ html,body,#root,.container{
 .text-center{
   text-align: center;
 }
-.max-width-container{
+.title{
+  width: 100%;
+  font-size: 3vw;
+  margin:20px auto;
+  &.bold{
+    font-weight: bolder;
+  }
+}
+.maxWidthContainer{
   max-width: 1440px;
   width:100%;
   margin:auto;

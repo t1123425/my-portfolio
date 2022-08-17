@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux'
 import { updateWorkData } from './features/workData/actions'
 import axios from './plugins/axios'
 import { Navbar } from './components/Navbar'
-import { About } from './pages/About'
 import Home from './pages/Home'
 import Work from './pages/Work'
 import { initFireBase, getImgUrl } from './plugins/firebase'
@@ -26,12 +25,7 @@ async function LoadWorkData() {
       }
       return workData
     })
-    // dataArray.forEach(async (e: WorkDataType) => {
-    //   const imgSrc = await getImgUrl(e.name)
-    //   e.imgSrc = imgSrc
-    // })
     return dataArray
-    // const workImg = await LoadStorageImg()
   } catch (error) {
     console.error(error)
   }
@@ -62,7 +56,6 @@ const App: React.FC = () => {
       <main className="container">
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/about" component={About} />
           <Route path="/work" component={Work} />
         </Switch>
       </main>

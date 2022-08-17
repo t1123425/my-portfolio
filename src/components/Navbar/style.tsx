@@ -8,10 +8,14 @@ interface MenuProps {
   size?: string
 }
 export const HeaderWrap = styled.header<HeaderProps>`
+  ---shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.59);
   padding: 20px;
   width: 100%;
   color: ${(props) => (props.color ? props.color : '#fff')};
   background-color: ${(props) => (props.bgColor ? props.bgColor : '#168AAD')};
+  box-shadow: var(---shadow);
+  -webkit-box-shadow: var(---shadow);
+  -moz-box-shadow: var(---shadow);
 `
 export const NavWrap = styled.nav`
   .navLinksList {

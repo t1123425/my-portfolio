@@ -12,10 +12,6 @@ const NavLinksArr: NavLinks[] = [
     path: '/',
   },
   {
-    name: 'About',
-    path: '/about',
-  },
-  {
     name: 'Work',
     path: '/work',
   },
@@ -33,7 +29,7 @@ export const Navbar: React.FC = () => {
       >
         <span className="bar"></span>
       </MenuBar>
-      <NavWrap className="max-width-container">
+      <NavWrap className="maxWidthContainer">
         <ul className={'navLinksList ' + (menuOpen ? 'active' : '')}>
           {NavLinksArr.map((e, i) => (
             <li key={i}>
