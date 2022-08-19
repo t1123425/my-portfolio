@@ -15,16 +15,43 @@ export const About: React.FC = () => {
           served as a teaching assistant for online programming teaching. I like
           to study and discuss new technologies. I am willing to help people
           solve problems. If you want to know more, you can watch my works. If
-          you are interested, please contact to me.
+          you are interested, please contact with me.
         </p>
       </section>
       <section>
         <h1>My Skill</h1>
         <div className="skillBlock">
           <ul>
-            <li>HTML5</li>
-            <li>CSS3/SCSS</li>
-            <li></li>
+            <li>HTML/CSS</li>
+            <li>SCSS</li>
+            <li>Javascript(ES6)</li>
+            <li>Typescript</li>
+            <li>
+              Solidity
+              <span>(on progress)</span>
+            </li>
+          </ul>
+        </div>
+        <div className="skillBlock">
+          <ul>
+            <li>Vue/Vue Router/VUEX</li>
+            <li>React/React Router/Redux</li>
+            <li>Bootstrap/Tailwind</li>
+            <li>Webpack</li>
+            <li>NPM</li>
+            <li>GIT(HUB)</li>
+            <li>
+              Web3.js
+              <span>(on progress)</span>
+            </li>
+          </ul>
+        </div>
+        <div className="skillBlock">
+          <ul>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>Heroku</li>
+            <li>Docker</li>
           </ul>
         </div>
       </section>

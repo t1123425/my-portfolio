@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { getWorkDataArray } from '../../features/workData/selectors'
 import { WorkListWrap, WorkBlock } from './style'
-const WorkList: React.FC = () => {
+export const WorkList: React.FC = () => {
   let DataState = useSelector(getWorkDataArray)
   useEffect(() => {
     // console.log('worklist', DataState)
@@ -20,5 +20,3 @@ const WorkList: React.FC = () => {
     </WorkListWrap>
   )
 }
-
-export default WorkList

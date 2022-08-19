@@ -5,6 +5,7 @@ import { HeaderWrap, NavWrap, MenuBar } from './style'
 interface NavLinks {
   name: string
   path: string
+  targetLink?: boolean
 }
 const NavLinksArr: NavLinks[] = [
   {
@@ -14,6 +15,16 @@ const NavLinksArr: NavLinks[] = [
   {
     name: 'Work',
     path: '/work',
+  },
+  {
+    name: 'Github',
+    path: 'https://github.com/t1123425',
+    targetLink: true,
+  },
+  {
+    name: 'CodePen',
+    path: 'https://codepen.io/Tommax/',
+    targetLink: true,
   },
 ]
 export const Navbar: React.FC = () => {
@@ -33,7 +44,13 @@ export const Navbar: React.FC = () => {
         <ul className={'navLinksList ' + (menuOpen ? 'active' : '')}>
           {NavLinksArr.map((e, i) => (
             <li key={i}>
-              <NavLink to={e.path}>{e.name}</NavLink>
+              {e.targetLink ? (
+                <a href={e.path} target="_blank">
+                  {e.name}
+                </a>
+              ) : (
+                <NavLink to={e.path}>{e.name}</NavLink>
+              )}
             </li>
           ))}
         </ul>
