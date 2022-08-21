@@ -9,7 +9,10 @@ const Contract: React.FC = () => {
           <strong>t1123425@gmail.com</strong>
         </li>
         <li>
-          <a href="www.linkedin.com/in/tom-yuan-61433689" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/tom-yuan-61433689"
+            target="_blank"
+          >
             Linkedln
           </a>
         </li>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+// import { useHistory } from 'react-router-dom'
 import { HeaderWrap, NavWrap, MenuBar } from './style'
 
 interface NavLinks {
@@ -29,6 +30,10 @@ const NavLinksArr: NavLinks[] = [
 ]
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location])
   return (
     <HeaderWrap bgColor="#013a63">
       <MenuBar
@@ -40,8 +45,8 @@ export const Navbar: React.FC = () => {
       >
         <span className="bar"></span>
       </MenuBar>
-      <NavWrap className="maxWidthContainer">
-        <ul className={'navLinksList ' + (menuOpen ? 'active' : '')}>
+      <NavWrap className={'maxWidthContainer ' + (menuOpen ? 'active' : '')}>
+        <ul className="navLinksList">
           {NavLinksArr.map((e, i) => (
             <li key={i}>
               {e.targetLink ? (
