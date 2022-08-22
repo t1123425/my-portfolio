@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 // import { useHistory } from 'react-router-dom'
+import { gsap } from 'gsap'
 import { HeaderWrap, NavWrap, MenuBar } from './style'
 
 interface NavLinks {
@@ -28,12 +29,25 @@ const NavLinksArr: NavLinks[] = [
     targetLink: true,
   },
 ]
+function ToggleEffect(status: boolean) {
+  let opacityNum = 1
+  let displayStatus = 'block'
+  if (!status) {
+    opacityNum = 0
+    displayStatus = 'none'
+  }
+  gsap.to('.navWrap', {
+    stagger: 0.5,
+    display: displayStatus,
+    opacity: opacityNum,
+    duration: 1,
+  })
+}
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
   useEffect(() => {
-    setMenuOpen(false)
-  }, [location])
+    ToggleEffect(menuOpen)
+  }, [menuOpen])
   return (
     <HeaderWrap bgColor="#013a63">
       <MenuBar
@@ -45,7 +59,7 @@ export const Navbar: React.FC = () => {
       >
         <span className="bar"></span>
       </MenuBar>
-      <NavWrap className={'maxWidthContainer ' + (menuOpen ? 'active' : '')}>
+      <NavWrap className="navWrap maxWidthContainer">
         <ul className="navLinksList">
           {NavLinksArr.map((e, i) => (
             <li key={i}>
@@ -54,7 +68,14 @@ export const Navbar: React.FC = () => {
                   {e.name}
                 </a>
               ) : (
-                <NavLink to={e.path}>{e.name}</NavLink>
+                <NavLink
+                  to={e.path}
+                  onClick={() => {
+                    setMenuOpen(false)
+                  }}
+                >
+                  {e.name}
+                </NavLink>
               )}
             </li>
           ))}

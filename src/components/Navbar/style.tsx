@@ -19,12 +19,13 @@ export const HeaderWrap = styled.header<HeaderProps>`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 2;
 `
 export const NavWrap = styled.nav`
   height: auto;
   position: static;
   background-color: inherit;
+  overflow: hidden;
   .navLinksList {
     display: flex;
     align-items: center;
@@ -40,14 +41,13 @@ export const NavWrap = styled.nav`
   }
   @media (max-width: 768px) {
     line-height: 1.5;
-    height: 0;
-    position: relative;
-    overflow: hidden;
+    height: 100vh;
+    position: absolute;
     left: 0;
     top: 0;
-    &.active {
+    /* &.active {
       height: 100vh;
-    }
+    } */
     .navLinksList {
       flex-direction: column;
       height: 100%;
@@ -63,6 +63,7 @@ export const MenuBar = styled.div<MenuProps>`
   position: relative;
   width: ${(props) => (props.size ? props.size : '50px')};
   height: ${(props) => (props.size ? props.size : '50px')};
+  z-index: 3;
   cursor: pointer;
   .bar {
     display: inline-block;
