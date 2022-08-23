@@ -45,11 +45,14 @@ function ToggleEffect(status: boolean) {
 }
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const matchMedia = gsap.matchMedia()
   useEffect(() => {
-    ToggleEffect(menuOpen)
+    matchMedia.add('(max-width:768px)', () => {
+      ToggleEffect(menuOpen)
+    })
   }, [menuOpen])
   return (
-    <HeaderWrap bgColor="#013a63">
+    <HeaderWrap bgColor="#03045e">
       <MenuBar
         className={menuOpen ? 'active' : ''}
         size="35px"

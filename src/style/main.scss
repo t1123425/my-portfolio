@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
+  color:#caf0f8;
+  background-color:#0077b6;
 }
 html,body,#root{
   width: 100%;
@@ -25,6 +27,32 @@ html,body,#root{
   margin:20px auto;
   &.bold{
     font-weight: bolder;
+  }
+}
+.flexContent{
+  display: flex;
+  align-items: center;
+  img{
+    width: 100%;
+  }
+  &.center{
+    justify-content: center;
+  }
+  &.column{
+    flex-direction: column;
+  }
+  &.space-between{
+    justify-content: space-between;
+  }
+  .halfBox{
+    width:50%;
+    box-sizing: border-box;
+  }
+}
+.InfoBox{
+  img{
+    border-radius: 25%;
+    max-width: 50%;
   }
 }
 .maxWidthContainer{
