@@ -5,18 +5,22 @@ interface WorkBlockProp {
 }
 
 export const WorkListWrap = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 350px;
+  grid-gap: 10px;
+  padding: 0 10px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 export const WorkBlock = styled.div<WorkBlockProp>`
   display: inline-block;
-  width: 32.5%;
-  min-height: 300px;
+  /* min-height: 300px; */
   position: relative;
   box-sizing: border-box;
-  margin: 5px;
   cursor: pointer;
   background-color: #ccc;
   background-position: center;

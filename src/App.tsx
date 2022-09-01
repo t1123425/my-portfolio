@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { updateWorkData } from './features/workData/actions'
 import axios from './plugins/axios'
+import { LogoContent } from './components/Logo'
 import { Navbar } from './components/Navbar'
 import Home from './pages/Home'
 import Work from './pages/Work'
@@ -53,6 +54,7 @@ const App: React.FC = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      <LogoContent background="#03045e" />
       <main className="container">
         <Switch>
           <Route path="/" component={Home} exact />

@@ -13,9 +13,9 @@ export const HeaderWrap = styled.header<HeaderProps>`
   width: 100%;
   color: ${(props) => (props.color ? props.color : '#fff')};
   background-color: ${(props) => (props.bgColor ? props.bgColor : '#168AAD')};
-  box-shadow: var(---shadow);
+  /* box-shadow: var(---shadow);
   -webkit-box-shadow: var(---shadow);
-  -moz-box-shadow: var(---shadow);
+  -moz-box-shadow: var(---shadow); */
   position: fixed;
   top: 0;
   left: 0;
@@ -38,6 +38,7 @@ export const NavWrap = styled.nav`
     display: block;
     text-decoration: none;
     color: inherit;
+    font-size: 1.5rem;
   }
   @media (max-width: 768px) {
     line-height: 1.5;

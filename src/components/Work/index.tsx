@@ -10,7 +10,6 @@ export const WorkList: React.FC = () => {
   return (
     <WorkListWrap>
       {DataState.workDataArray.map((e: any, i: number) => {
-        // console.log('e', e)
         return (
           <WorkBlock key={i} bgImg={e.imgSrc ? e.imgSrc : null}>
             <h2 className="workTitle">{e.name}</h2>

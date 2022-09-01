@@ -52,7 +52,8 @@ export const Navbar: React.FC = () => {
     })
   }, [menuOpen])
   return (
-    <HeaderWrap bgColor="#03045e">
+    // #03045e
+    <HeaderWrap bgColor="transparent">
       <MenuBar
         className={menuOpen ? 'active' : ''}
         size="35px"
