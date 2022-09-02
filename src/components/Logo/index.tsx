@@ -8,13 +8,19 @@ export const LogoContent: React.FC<PropType> = (props) => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
-      height="1200.000000pt"
-      viewBox="0 0 1200.000000 1200.000000"
+      height="100%"
       preserveAspectRatio="xMidYMid meet"
       className="logo"
+      viewBox="0 0 900 900"
     >
+      {/* transform="translate(-200,900) scale(0.1,-0.1)" */}
+      {/* <polygon
+        fill={props.background ? props.background : '#00000'}
+        stroke-width="0"
+        points="0,10 20,10 10,0"
+      /> */}
       <g
-        transform="translate(-200,900) scale(0.100000,-0.100000)"
+        transform="translate(-150,1050) scale(0.1,-0.1)"
         fill={props.background ? props.background : '#00000'}
         stroke="none"
       >

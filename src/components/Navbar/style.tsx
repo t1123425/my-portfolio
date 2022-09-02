@@ -9,7 +9,7 @@ interface MenuProps {
 }
 export const HeaderWrap = styled.header<HeaderProps>`
   ---shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.59);
-  padding: 20px;
+  padding: 10px;
   width: 100%;
   color: ${(props) => (props.color ? props.color : '#fff')};
   background-color: ${(props) => (props.bgColor ? props.bgColor : '#168AAD')};
@@ -32,13 +32,18 @@ export const NavWrap = styled.nav`
     justify-content: end;
   }
   .navLinksList li {
-    margin: 10px;
+    margin: 10px 16.5px;
   }
   .navLinksList a {
     display: block;
     text-decoration: none;
     color: inherit;
-    font-size: 1.5rem;
+    font-size: 1.56rem;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
   }
   @media (max-width: 768px) {
     line-height: 1.5;
