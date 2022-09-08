@@ -1,12 +1,11 @@
 @font-face {
   font-family: 'LeagueGothic';
+  font-weight: 100;
   src: url('../assets/font/LeagueGothic-Regular.otf');
 }
 body {
   margin: 0;
-  font-family: LeagueGothic,-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'LeagueGothic',Arial, Helvetica Neue, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -21,7 +20,9 @@ html,body,#root{
 .container{
   width: 100%;
   min-height: 100%;
-  padding-top: 105px;
+  @media (max-width:768px) {
+    padding-top: 50px;
+  }
 }
 .text-center{
   text-align: center;
@@ -70,7 +71,6 @@ html,body,#root{
   max-width: 1440px;
   width:100%;
   margin:auto;
-  padding: 0 100px;
   &.flex{
     display: flex;
     flex-wrap: wrap;
@@ -85,7 +85,10 @@ html,body,#root{
       flex-direction: column;
      }
      h1{
-      font-size: 12.5rem;
+      font-size: 200px;
+      font-size: min(max(12.5vw,100px),200px);
+      //font-size: 8vw;
+      padding: 0 16.5px;
      }
      h2{
       font-size: large;
@@ -96,7 +99,6 @@ html,body,#root{
     .flex{
       height: auto;
     }
-    padding: 0 50;
   }
  
 }

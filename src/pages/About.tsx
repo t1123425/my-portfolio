@@ -4,7 +4,7 @@ import { InfoBlock, SkillList } from '../components/About'
 import Head from '../assets/img/head.jpg'
 export const About: React.FC = () => {
   // const history = useHistory()
-  const aboutMe = ` I am a front-end engineer from Taiwan. I have many years of experience
+  const aboutMe = `My name is Tom Yuan,i am a front-end engineer from Taiwan. I have many years of experience
   in web development. I am good at optimizing web user experience and
   improving web performance. Besides being an engineer, I have also
   served as a teaching assistant for online programming teaching. I like
