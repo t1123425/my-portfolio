@@ -1,5 +1,6 @@
 import React, { memo } from 'react'
 import { WorkList } from '../components/Work'
+
 const Work: React.FC = () => {
   return (
     <section className="maxWidthContainer">

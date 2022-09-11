@@ -39,7 +39,4 @@ export const WorkBlock = styled.div<WorkBlockProp>`
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  img {
-    width: 100%;
-  }
 `

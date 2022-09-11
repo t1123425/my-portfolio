@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { updateWorkData } from './features/workData/actions'
 import axios from './plugins/axios'
@@ -7,6 +7,7 @@ import { LogoContent } from './components/Logo'
 import { Navbar } from './components/Navbar'
 import Home from './pages/Home'
 import Work from './pages/Work'
+import WorkDetail from './pages/WorkDetail'
 import { initFireBase, getImgUrl } from './plugins/firebase'
 import { WorkDataType } from './features/workData/types'
 
@@ -51,6 +52,7 @@ const App: React.FC = () => {
     }
     asyncEnv()
   }, [])
+
   return (
     <BrowserRouter>
       <Navbar />
@@ -58,7 +60,11 @@ const App: React.FC = () => {
       <main className="container">
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/work" component={Work} />
+          <Route path="/work" component={Work} exact />
+          <Route path="/work/:workName" component={WorkDetail} />
+          <Route path="*">
+            <Redirect to="/" />
+          </Route>
         </Switch>
       </main>
       <footer>
