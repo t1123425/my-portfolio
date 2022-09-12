@@ -15,6 +15,27 @@ export const WorkListWrap = styled.div`
     grid-template-columns: 1fr;
   }
 `
+export const WorkInfoBlock = styled.div`
+  padding: 0 10px;
+  img {
+    width: 100%;
+  }
+  p {
+    font-size: 2.8rem;
+  }
+  .linkBtn {
+    display: block;
+    padding: 20px;
+    font-size: 2.8rem;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #0077b6;
+    width: 100%;
+    max-width: 241px;
+    text-align: center;
+    margin: 50px auto;
+  }
+`
 
 export const WorkBlock = styled.div<WorkBlockProp>`
   display: inline-block;
