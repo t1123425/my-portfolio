@@ -13,6 +13,7 @@ const WorkDetail: React.FC = () => {
   const { workName } = useParams<RouteParams>()
   const history = useNavigate()
   let workData = useSelector(getWorkData(workName || ''))
+  // console.log('work', workData)
   return (
     <section className="maxWidthContainer pTop50">
       <h1 className="title bold text-center">{workName}</h1>
@@ -22,13 +23,15 @@ const WorkDetail: React.FC = () => {
       <WorkInfoBlock>
         <div className="workBox">
           <span>Year:</span>
-          <span>{workData.year}</span>
+          <span>{workData?.year}</span>
         </div>
         <div className="workBox">
           <span>Tech:</span>
-          <ul>
-            <li></li>
-          </ul>
+          <div>
+            {workData?.workTech.map((e: string, i: number) => {
+              return <span key={i}>{e}</span>
+            })}
+          </div>
         </div>
         <p>{workData?.description}</p>
         {workData?.link ? (

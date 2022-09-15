@@ -14,7 +14,7 @@ async function LoadWorkData() {
       process.env.REACT_APP_API_ID + '/databases/(default)/documents/work'
     )
     const workStoreData = storeData.data.documents
-    // console.log('storeDATA', workStoreData)
+    //console.log('storeDATA', workStoreData)
     let sortArray = []
     const dataArray = workStoreData.map((e: any) => {
       const workData = {
@@ -22,6 +22,9 @@ async function LoadWorkData() {
         link: e.fields.worklink.stringValue,
         description: e.fields.workDescription.stringValue,
         imgSrc: '',
+        workTech: e.fields.workTech.arrayValue.values.map(
+          (d: any) => d.stringValue
+        ),
         year: parseInt(e.fields.year.integerValue),
       }
       return workData

@@ -6,6 +6,7 @@ interface WorkData {
   link: string
   imgSrc: string
   year: number | 0
+  workTech: string[] | []
 }
 
 interface UpdateWorkData {
