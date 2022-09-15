@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getWorkDataArray } from '../../features/workData/selectors'
 import { WorkListWrap, WorkBlock } from './style'
+
 export const WorkList: React.FC = () => {
   let DataState = useSelector(getWorkDataArray)
   useEffect(() => {
@@ -14,7 +15,7 @@ export const WorkList: React.FC = () => {
         return (
           <WorkBlock key={i} bgImg={e.imgSrc ? e.imgSrc : null}>
             <Link className="workTitle" to={`/work/${e.name}`}>
-              <h2>{e.name}</h2>
+              <h2 className="title text-center">{e.name}</h2>
             </Link>
           </WorkBlock>
         )

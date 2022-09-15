@@ -7,24 +7,29 @@ import { LogoContent } from './components/Logo'
 import { Navbar } from './components/Navbar'
 import { initFireBase, getImgUrl } from './plugins/firebase'
 import { WorkDataType } from './features/workData/types'
-
+import Contact from './pages/Contact'
 async function LoadWorkData() {
   try {
     const storeData = await axios.get(
       process.env.REACT_APP_API_ID + '/databases/(default)/documents/work'
     )
     const workStoreData = storeData.data.documents
-    //console.log('storeDATA', workStoreData)
+    // console.log('storeDATA', workStoreData)
+    let sortArray = []
     const dataArray = workStoreData.map((e: any) => {
       const workData = {
         name: e.fields.workName.stringValue,
         link: e.fields.worklink.stringValue,
         description: e.fields.workDescription.stringValue,
         imgSrc: '',
+        year: parseInt(e.fields.year.integerValue),
       }
       return workData
     })
-    return dataArray
+    sortArray = dataArray.sort(
+      (a: WorkDataType, b: WorkDataType) => b.year - a.year
+    )
+    return sortArray
   } catch (error) {
     console.error(error)
   }
@@ -57,7 +62,8 @@ const App: React.FC = () => {
       <main className="container">
         <Outlet />
       </main>
-      <footer>
+      <Contact />
+      <footer className="bg-w2 b-color">
         <p className="text-center">Copyright © 2022 Tom Yuan Website</p>
       </footer>
     </Fragment>

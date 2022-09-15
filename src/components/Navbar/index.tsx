@@ -19,15 +19,19 @@ const NavLinksArr: NavLinks[] = [
     path: '/work',
   },
   {
-    name: 'Github',
-    path: 'https://github.com/t1123425',
-    targetLink: true,
+    name: 'About',
+    path: '/about',
   },
-  {
-    name: 'CodePen',
-    path: 'https://codepen.io/Tommax/',
-    targetLink: true,
-  },
+  // {
+  //   name: 'Github',
+  //   path: 'https://github.com/t1123425',
+  //   targetLink: true,
+  // },
+  // {
+  //   name: 'CodePen',
+  //   path: 'https://codepen.io/Tommax/',
+  //   targetLink: true,
+  // },
 ]
 function ToggleEffect(status: boolean) {
   let opacityNum = 1

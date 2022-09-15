@@ -5,11 +5,11 @@ interface InfoProps {
 }
 export const InfoBlock: React.FC<InfoProps> = (props) => {
   return (
-    <div className="InfoContent flexContent space-between">
-      <div className="InfoBox halfBox">
+    <div className="InfoContent flexContent column space-between">
+      <div className="InfoBox halfBox text-center">
         <img src={props.imgSrc} alt="InfoImg" />
       </div>
-      <div className="InfoBox halfBox">
+      <div className="InfoBox">
         <p>{props.info}</p>
       </div>
     </div>

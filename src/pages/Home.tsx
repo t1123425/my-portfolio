@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
-import { About } from './About'
-
+import { WorkList } from '../components/Work'
 const Home: React.FC = () => {
   return (
     <Fragment>
@@ -8,7 +7,7 @@ const Home: React.FC = () => {
         <h1>I'm Tom Yuan</h1>
         <h1>Front End Developer</h1>
       </section>
-      <About />
+      <WorkList />
     </Fragment>
   )
 }

@@ -32,7 +32,7 @@ export const NavWrap = styled.nav`
     justify-content: end;
   }
   .navLinksList li {
-    margin: 10px 16.5px;
+    margin: 3px 16.5px;
   }
   .navLinksList a {
     display: block;

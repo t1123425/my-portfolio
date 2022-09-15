@@ -5,6 +5,7 @@ interface WorkData {
   description: string
   link: string
   imgSrc: string
+  year: number | 0
 }
 
 interface UpdateWorkData {

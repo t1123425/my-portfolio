@@ -4,6 +4,8 @@ import { getWorkData } from '../features/workData/selectors'
 import { useParams } from 'react-router-dom'
 import { WorkInfoBlock } from '../components/Work/style'
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLeftLong } from '@fortawesome/free-solid-svg-icons'
 type RouteParams = {
   workName: string
 }
@@ -12,12 +14,22 @@ const WorkDetail: React.FC = () => {
   const history = useNavigate()
   let workData = useSelector(getWorkData(workName || ''))
   return (
-    <section className="maxWidthContainer">
+    <section className="maxWidthContainer pTop50">
       <h1 className="title bold text-center">{workName}</h1>
       <WorkInfoBlock>
         <img src={workData?.imgSrc || null} alt={workName} />
       </WorkInfoBlock>
       <WorkInfoBlock>
+        <div className="workBox">
+          <span>Year:</span>
+          <span>{workData.year}</span>
+        </div>
+        <div className="workBox">
+          <span>Tech:</span>
+          <ul>
+            <li></li>
+          </ul>
+        </div>
         <p>{workData?.description}</p>
         {workData?.link ? (
           <a href={workData.link} className="linkBtn" target="_blank">
@@ -26,12 +38,14 @@ const WorkDetail: React.FC = () => {
         ) : null}
       </WorkInfoBlock>
       <button
+        className="btn backPage"
         onClick={(e) => {
           e.preventDefault()
           history('/work')
         }}
       >
-        {'<= back to work'}
+        <FontAwesomeIcon icon={faLeftLong} />
+        <span>Back To work Page</span>
       </button>
     </section>
   )

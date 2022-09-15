@@ -17,16 +17,23 @@ export const WorkListWrap = styled.div`
 `
 export const WorkInfoBlock = styled.div`
   padding: 0 10px;
+  font-size: 2.8rem;
   img {
     width: 100%;
   }
   p {
-    font-size: 2.8rem;
+    margin: 30px auto;
+  }
+  .workBox {
+    display: flex;
+    margin: 10px auto;
+    span {
+      margin-right: 10px;
+    }
   }
   .linkBtn {
     display: block;
     padding: 20px;
-    font-size: 2.8rem;
     border-radius: 25px;
     background-color: #fff;
     color: #0077b6;
@@ -59,5 +66,10 @@ export const WorkBlock = styled.div<WorkBlockProp>`
     left: 0;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease, color 0.5s ease;
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      color: #0077b6;
+    }
   }
 `

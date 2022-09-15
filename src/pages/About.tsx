@@ -1,9 +1,7 @@
 import React from 'react'
 import { InfoBlock, SkillList } from '../components/About'
-// import { useHistory } from 'react-router-dom'
 import Head from '../assets/img/head.jpg'
 export const About: React.FC = () => {
-  // const history = useHistory()
   const aboutMe = `My name is Tom Yuan,i am a front-end engineer from Taiwan. I have many years of experience
   in web development. I am good at optimizing web user experience and
   improving web performance. Besides being an engineer, I have also
@@ -12,21 +10,13 @@ export const About: React.FC = () => {
   solve problems. If you want to know more, you can watch my works. If
   you are interested, please contact with me.`
   return (
-    <article className="maxWidthContainer">
+    <article className="maxWidthContainer pTop50">
       <section>
-        <h2 className="text-center">About Me</h2>
+        <h1 className="title bold borderBottom">About Me</h1>
         <InfoBlock info={aboutMe} imgSrc={Head} />
-        <h2 className="text-center">My Skill</h2>
+        <h2 className="title bold borderBottom">My Skill</h2>
         <SkillList />
       </section>
-      {/* <button
-        type="button"
-        className="btn"
-        cy-data="go-back-button"
-        onClick={() => history.push('/')}
-      >
-        Go back
-      </button> */}
     </article>
   )
 }

@@ -16,7 +16,48 @@ html,body,#root{
   width: 100%;
   height:100%;
 }
+.bg-w{
+  background-color: #fff;
+}
+.bg-w2{
+  background-color: #caf0f8;
+}
+.b-color{
+  color:#0077b6;
+}
 
+.btn{
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color:inherit;
+  font-size: 40px;
+  position: relative;
+  &:after{
+    content:"";
+    display: block;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: width 0.5s linear;
+    background-color: #fff;
+  }
+  &:hover{
+    &:after{
+      content:"";
+      display: block;
+      width: 100%;
+    }
+  }
+  &.backPage{
+    margin-top: 30px;
+    span{
+      margin-left: 10px;
+    }
+  }
+}
 .container{
   width: 100%;
   min-height: 100%;
@@ -31,9 +72,18 @@ html,body,#root{
   width: 100%;
   font-size: 3vw;
   margin:20px auto;
+  &.borderBottom{
+    padding-bottom: 5px;
+    border-bottom: 5px solid #fff;
+    text-indent: 10px;
+  }
   &.bold{
     font-weight: bolder;
   }
+  @media (max-width:768px) {
+    font-size: 45px;
+  }
+
 }
 .logo{
   position: fixed;
@@ -56,9 +106,12 @@ html,body,#root{
   &.space-between{
     justify-content: space-between;
   }
+  .InfoBox,.halfBox{
+    font-size: 40px;
+    box-sizing: border-box;
+  }
   .halfBox{
     width:50%;
-    box-sizing: border-box;
   }
 }
 .InfoBox{
@@ -67,10 +120,14 @@ html,body,#root{
     max-width: 50%;
   }
 }
+
 .maxWidthContainer{
   max-width: 1440px;
   width:100%;
   margin:auto;
+  &.pTop50{
+    padding-top: 50px;
+  }
   &.flex{
     display: flex;
     flex-wrap: wrap;
@@ -101,4 +158,30 @@ html,body,#root{
     }
   }
  
+}
+//contact
+.contactContent{
+  margin-top: 50px;
+  padding: 50px 0 25px;
+  .mainTitle{
+    font-size: min(max(12.5vw, 80px), 200px);
+  }
+  .email{
+    font-size: min(max(12.5vw, 40px), 100px);
+  }
+  .contactList{
+    padding:50px auto;
+    font-size: 40px;
+    margin: 20px auto;
+    li{
+      &:first-child{
+        margin-bottom: 30px;
+      }
+      margin-bottom: 10px;
+    }
+    span{
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
 }
