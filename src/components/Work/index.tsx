@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import { getWorkDataArray } from '../../features/workData/selectors'
 import { WorkListWrap, WorkBlock } from './style'
 
-export const WorkList: React.FC = () => {
+interface WorklistProps {
+  workLimit?: number
+}
+
+export const WorkList: React.FC<WorklistProps> = (props) => {
   let DataState = useSelector(getWorkDataArray)
   useEffect(() => {
     // console.log('worklist', DataState)
@@ -12,6 +16,7 @@ export const WorkList: React.FC = () => {
   return (
     <WorkListWrap>
       {DataState.workDataArray.map((e: any, i: number) => {
+        if (props.workLimit && i >= props.workLimit) return null
         return (
           <WorkBlock key={i} bgImg={e.imgSrc ? e.imgSrc : null}>
             <Link className="workTitle" to={`/work/${e.name}`}>

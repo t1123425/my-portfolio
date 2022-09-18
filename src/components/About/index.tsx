@@ -19,37 +19,39 @@ export const SkillList: React.FC = () => {
   return (
     <div className="flexContent space-between">
       <div className="skillBlock">
+        <h2>FrontEnd</h2>
         <ul>
-          <li>HTML/CSS</li>
-          <li>SCSS</li>
+          <li>HTML/CSS(SCSS)</li>
           <li>Javascript(ES6)</li>
           <li>Typescript</li>
-          <li>
-            Solidity
-            <span>(on progress)</span>
-          </li>
-        </ul>
-      </div>
-      <div className="skillBlock">
-        <ul>
           <li>Vue/Vue Router/VUEX</li>
           <li>React/React Router/Redux</li>
           <li>Bootstrap/Tailwind</li>
-          <li>Webpack</li>
-          <li>NPM</li>
-          <li>GIT(HUB)</li>
           <li>
             Web3.js
-            <span>(on progress)</span>
+            <span>(In Progress)</span>
           </li>
         </ul>
       </div>
       <div className="skillBlock">
+        <h2>BackEnd</h2>
         <ul>
           <li>Node.js</li>
           <li>Express.js</li>
           <li>Heroku</li>
           <li>Docker</li>
+        </ul>
+      </div>
+      <div className="skillBlock">
+        <h2>Others</h2>
+        <ul>
+          <li>Webpack</li>
+          <li>NPM</li>
+          <li>GIT(HUB)</li>
+          <li>
+            Solidity
+            <span>(In Progress)</span>
+          </li>
         </ul>
       </div>
     </div>

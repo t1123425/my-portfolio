@@ -27,12 +27,25 @@ html,body,#root{
 }
 
 .btn{
+  display: block;
   background-color: transparent;
   border: 0;
   outline: none;
   color:inherit;
   font-size: 40px;
   position: relative;
+  &.morework{
+    margin:50px auto;
+    width:100%;
+    max-width: 750px;
+    border-radius: 25px;
+    color:#0077b6;
+    background-color: #fff;
+    padding: 10px 20px;
+  }
+  span{
+    margin-left: 10px;
+  }
   &:after{
     content:"";
     display: block;
@@ -44,17 +57,14 @@ html,body,#root{
     transition: width 0.5s linear;
     background-color: #fff;
   }
-  &:hover{
-    &:after{
-      content:"";
-      display: block;
-      width: 100%;
-    }
-  }
   &.backPage{
     margin-top: 30px;
-    span{
-      margin-left: 10px;
+    &:hover{
+      &:after{
+        content:"";
+        display: block;
+        width: 100%;
+      }
     }
   }
 }
