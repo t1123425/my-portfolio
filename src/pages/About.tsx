@@ -10,7 +10,7 @@ export const About: React.FC = () => {
   solve problems. If you want to know more, you can watch my works. If
   you are interested, please contact with me.`
   return (
-    <article className="maxWidthContainer pTop50">
+    <article className="maxWidthContainer pTop50 pSide98">
       <section>
         <h1 className="title bold borderBottom">About Me</h1>
         <InfoBlock info={aboutMe} imgSrc={Head} />

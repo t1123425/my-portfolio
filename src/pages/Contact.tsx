@@ -9,7 +9,7 @@ import {
 const Contract: React.FC = () => {
   return (
     <section className="contactContent bg-w b-color">
-      <div className="maxWidthContainer">
+      <div className="maxWidthContainer pSide98">
         <h2 className="mainTitle text-center">Contact Me !</h2>
         <ul className="contactList">
           <li className="text-center">

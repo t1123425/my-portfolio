@@ -3,7 +3,7 @@ import { WorkList } from '../components/Work'
 
 const Work: React.FC = () => {
   return (
-    <section className="maxWidthContainer pTop50">
+    <section className="maxWidthContainer pTop50 pSide98">
       <h1 className="title bold borderBottom">My Work</h1>
       <WorkList />
     </section>

@@ -10,7 +10,7 @@ const Home: React.FC = () => {
         <h1>I'm Tom Yuan</h1>
         <h1>Front End Developer</h1>
       </section>
-      <section className="maxWidthContainer">
+      <section className="maxWidthContainer pSide98">
         {/* <p>Hi!there ,welcome to my portfolio, </p> */}
         <h1 className="title bold borderBottom text-center">
           My Recently Works

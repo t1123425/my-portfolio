@@ -1,4 +1,5 @@
 import React from 'react'
+import { SkillBlock } from './styled'
 interface InfoProps {
   imgSrc?: string
   info: string
@@ -15,45 +16,47 @@ export const InfoBlock: React.FC<InfoProps> = (props) => {
     </div>
   )
 }
+interface SkillTypes {
+  name: string
+  skills: string[]
+}
 export const SkillList: React.FC = () => {
+  const skillData: SkillTypes[] = [
+    {
+      name: 'FrontEnd',
+      skills: [
+        'HTML/CSS(SCSS)',
+        'Javascript(ES6)',
+        'Typescript',
+        'Bootstrap',
+        'Tailwind',
+        'React/React Router/Redux',
+        'Vue/Vue Router/VUEX',
+      ],
+    },
+    {
+      name: 'BackEnd',
+      skills: ['Node.js', 'Express.js', 'Heroku', 'Docker'],
+    },
+    {
+      name: 'Others',
+      skills: ['Webpack', 'NPM', 'GIT(HUB)', 'Docker'],
+    },
+  ]
   return (
-    <div className="flexContent space-between">
-      <div className="skillBlock">
-        <h2>FrontEnd</h2>
-        <ul>
-          <li>HTML/CSS(SCSS)</li>
-          <li>Javascript(ES6)</li>
-          <li>Typescript</li>
-          <li>Vue/Vue Router/VUEX</li>
-          <li>React/React Router/Redux</li>
-          <li>Bootstrap/Tailwind</li>
-          <li>
-            Web3.js
-            <span>(In Progress)</span>
-          </li>
-        </ul>
-      </div>
-      <div className="skillBlock">
-        <h2>BackEnd</h2>
-        <ul>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>Heroku</li>
-          <li>Docker</li>
-        </ul>
-      </div>
-      <div className="skillBlock">
-        <h2>Others</h2>
-        <ul>
-          <li>Webpack</li>
-          <li>NPM</li>
-          <li>GIT(HUB)</li>
-          <li>
-            Solidity
-            <span>(In Progress)</span>
-          </li>
-        </ul>
-      </div>
+    <div className="flexContent column space-between">
+      {skillData.map((e, i) => {
+        return (
+          <SkillBlock className="bg-w b-color" key={i}>
+            <h2 className="skillTitle">{e.name}</h2>
+            <ul className="skillList">
+              {e.skills.map((d, di) => (
+                <li key={di}>{d}</li>
+              ))}
+            </ul>
+          </SkillBlock>
+        )
+      })}
     </div>
   )
 }

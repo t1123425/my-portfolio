@@ -10,7 +10,6 @@ export const WorkListWrap = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 350px;
   grid-gap: 10px;
-  padding: 0 10px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -20,6 +19,8 @@ export const WorkInfoBlock = styled.div`
   font-size: 2.8rem;
   img {
     width: 100%;
+    min-height: 500px;
+    //background-color: #ccc;
   }
   p {
     margin: 30px auto;

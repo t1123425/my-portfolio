@@ -25,7 +25,6 @@ html,body,#root{
 .b-color{
   color:#0077b6;
 }
-
 .btn{
   display: block;
   background-color: transparent;
@@ -103,6 +102,9 @@ html,body,#root{
 }
 .flexContent{
   display: flex;
+  &.startItem{
+    align-items: flex-start;
+  }
   align-items: center;
   img{
     width: 100%;
@@ -123,20 +125,29 @@ html,body,#root{
   .halfBox{
     width:50%;
   }
-}
-.InfoBox{
-  img{
-    border-radius: 25%;
-    max-width: 50%;
+  .InfoBox{
+    img{
+      border-radius: 25%;
+      max-width: 50%;
+    }
+  }
+  @media (max-width:768px) {
+    .halfBox{
+      width:100%;
+    }
   }
 }
-
+$pSide:98px;
 .maxWidthContainer{
   max-width: 1440px;
   width:100%;
   margin:auto;
   &.pTop50{
     padding-top: 50px;
+  }
+  &.pSide98{
+    padding-left: 98px;
+    padding-right: 98px;
   }
   &.flex{
     display: flex;
@@ -163,8 +174,12 @@ html,body,#root{
      
   }
   @media (max-width:768px){
-    .flex{
+    &.flex{
       height: auto;
+    }
+    &.pSide98{
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
  
