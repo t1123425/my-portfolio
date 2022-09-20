@@ -1,8 +1,15 @@
 import React from 'react'
 import { SkillBlock } from './styled'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  IconDefinition,
+  faCode,
+  faServer,
+  faScrewdriverWrench,
+} from '@fortawesome/free-solid-svg-icons'
 interface InfoProps {
   imgSrc?: string
-  info: string
+  info?: string
 }
 export const InfoBlock: React.FC<InfoProps> = (props) => {
   return (
@@ -19,6 +26,7 @@ export const InfoBlock: React.FC<InfoProps> = (props) => {
 interface SkillTypes {
   name: string
   skills: string[]
+  icon: IconDefinition
 }
 export const SkillList: React.FC = () => {
   const skillData: SkillTypes[] = [
@@ -33,14 +41,17 @@ export const SkillList: React.FC = () => {
         'React/React Router/Redux',
         'Vue/Vue Router/VUEX',
       ],
+      icon: faCode,
     },
     {
       name: 'BackEnd',
       skills: ['Node.js', 'Express.js', 'Heroku', 'Docker'],
+      icon: faServer,
     },
     {
       name: 'Others',
       skills: ['Webpack', 'NPM', 'GIT(HUB)', 'Docker'],
+      icon: faScrewdriverWrench,
     },
   ]
   return (
@@ -48,7 +59,10 @@ export const SkillList: React.FC = () => {
       {skillData.map((e, i) => {
         return (
           <SkillBlock className="bg-w b-color" key={i}>
-            <h2 className="skillTitle">{e.name}</h2>
+            <h2 className="skillTitle">
+              <FontAwesomeIcon icon={e.icon} />
+              <span>{e.name}</span>
+            </h2>
             <ul className="skillList">
               {e.skills.map((d, di) => (
                 <li key={di}>{d}</li>

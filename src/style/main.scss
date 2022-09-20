@@ -126,14 +126,23 @@ html,body,#root{
     width:50%;
   }
   .InfoBox{
+    p{
+      margin-bottom: 10px;
+    }
     img{
       border-radius: 25%;
       max-width: 50%;
+      min-width: 300px;
     }
   }
   @media (max-width:768px) {
     .halfBox{
       width:100%;
+    }
+    .InfoBox{
+      img{
+        max-width: 500px;
+      }
     }
   }
 }
