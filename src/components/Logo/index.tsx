@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import viewBg from '../../assets/img/viewBg.jpg'
+// import { GsapSvg } from '../../plugins/gsap'
 interface PropType {
-  background: string
+  background?: string
+  path?: string
 }
+
 export const LogoContent: React.FC<PropType> = (props) => {
+  useEffect(() => {
+    // gsap.from('#tylogo', {
+    //   drawSVG: 0,
+    //   duration: 20,
+    // })
+    console.log('svg', props)
+  }, [])
   return (
     <svg
       version="1.1"
@@ -11,8 +22,20 @@ export const LogoContent: React.FC<PropType> = (props) => {
       height="100%"
       preserveAspectRatio="xMidYMid meet"
       className="logo"
+      id="tylogo"
       viewBox="0 0 900 900"
     >
+      <defs>
+        <pattern
+          id="img1"
+          viewBox="0,0,1280,700"
+          patternTransform="scale(1,-1)"
+          width="100%"
+          height="100%"
+        >
+          <image href={viewBg} x="0" y="0" />
+        </pattern>
+      </defs>
       {/* transform="translate(-200,900) scale(0.1,-0.1)" */}
       {/* <polygon
         fill={props.background ? props.background : '#00000'}
@@ -21,7 +44,7 @@ export const LogoContent: React.FC<PropType> = (props) => {
       /> */}
       <g
         transform="translate(-150,1050) scale(0.1,-0.1)"
-        fill={props.background ? props.background : '#00000'}
+        fill="url(#img1)"
         stroke="none"
       >
         <path

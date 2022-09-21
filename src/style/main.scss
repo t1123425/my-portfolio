@@ -3,6 +3,18 @@
   font-weight: 100;
   src: url('../assets/font/LeagueGothic-Regular.otf');
 }
+@mixin transitionEffect($type,$duration, $timeFunc){
+  transition: $type $duration;
+  -webkit-transition: $type $duration;
+  -moz-transition:  $type $duration;
+  -o-transition: $type $duration;
+  @if variable-exists($timeFunc){
+    transition-timing-function: $timeFunc;
+    -webkit-transition-timing-function: $timeFunc;
+    -moz-transition-timing-function: $timeFunc;
+    -o-transition-timing-function: $timeFunc;
+  }
+}
 body {
   margin: 0;
   font-family: 'LeagueGothic',Arial, Helvetica Neue, Helvetica, sans-serif;
@@ -53,7 +65,7 @@ html,body,#root{
     position: absolute;
     left: 0;
     bottom: -1px;
-    transition: width 0.5s linear;
+    @include transitionEffect(width,0.5s,ease);
     background-color: #fff;
   }
   &.backPage{
@@ -130,19 +142,15 @@ html,body,#root{
       margin-bottom: 10px;
     }
     img{
-      border-radius: 25%;
-      max-width: 50%;
-      min-width: 300px;
+      border-radius: 50%;
+      max-width: 420px;
+      width:100%;
+      margin:50px auto;
     }
   }
   @media (max-width:768px) {
     .halfBox{
       width:100%;
-    }
-    .InfoBox{
-      img{
-        max-width: 500px;
-      }
     }
   }
 }
@@ -219,3 +227,19 @@ $pSide:98px;
     }
   }
 }
+/** animate effect style  **/
+.allEffect{
+  @include transitionEffect(all,1s,none);
+}
+.showUpEffect{
+  position: relative;
+  overflow: hidden;
+  .item{
+    @include transitionEffect(all,1s,none);
+    transform:  translateY(500px);
+    &.active{
+      transform:  translateY(0);
+    }
+  }
+}
+.floatEffect{}

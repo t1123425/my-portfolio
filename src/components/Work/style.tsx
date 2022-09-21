@@ -67,7 +67,6 @@ export const WorkBlock = styled.div<WorkBlockProp>`
     left: 0;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: background-color 0.5s ease, color 0.5s ease;
     &:hover {
       background-color: rgba(255, 255, 255, 0.5);
       color: #0077b6;
