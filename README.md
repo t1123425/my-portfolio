@@ -8,11 +8,5 @@ Other plugins/tools used:
 - [FontAwesome](https://fontawesome.com/)
 - [GSAP](https://greensock.com/docs/)
 
-## Usage
-- Clone the project
-- cd project folder and 
-```bash
-npm i
-```
 ## Demo
-Website link: **[Here](#)**
+Website link: **[Here](https://t1123425.github.io/My-portfolio)**
