@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
+import { SvgLogo } from './style'
 import viewBg from '../../assets/img/viewBg.jpg'
-// import { GsapSvg } from '../../plugins/gsap'
 interface PropType {
   background?: string
   path?: string
@@ -15,25 +15,24 @@ export const LogoContent: React.FC<PropType> = (props) => {
     console.log('svg', props)
   }, [])
   return (
-    <svg
+    <SvgLogo
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
       preserveAspectRatio="xMidYMid meet"
-      className="logo"
       id="tylogo"
       viewBox="0 0 900 900"
     >
       <defs>
         <pattern
           id="img1"
-          viewBox="0,0,1280,700"
-          patternTransform="scale(1,-1)"
+          viewBox="0,0,650,650"
+          patternTransform="translate(0,-300) scale(1,-1)"
           width="100%"
           height="100%"
         >
-          <image href={viewBg} x="0" y="0" />
+          <image href={viewBg} x="-300" y="0" />
         </pattern>
       </defs>
       {/* transform="translate(-200,900) scale(0.1,-0.1)" */}
@@ -47,6 +46,15 @@ export const LogoContent: React.FC<PropType> = (props) => {
         fill="url(#img1)"
         stroke="none"
       >
+        {/* <animate
+          id="fillIn"
+          attributeName="fill-opacity"
+          from="0"
+          to="1"
+          dur="0.5s"
+          fill="freeze"
+          repeatCount="1"
+        /> */}
         <path
           d="M1365 9008 c-86 -394 -301 -1435 -298 -1440 2 -5 429 -8 949 -8 716
    0 944 -3 944 -12 0 -9 -968 -4520 -987 -4596 l-5 -22 950 0 c683 0 953 3 958
@@ -56,8 +64,8 @@ export const LogoContent: React.FC<PropType> = (props) => {
    1467 1900 1470 1907 4 13 -136 15 -1081 15 l-1085 0 -793 -1134 c-441 -630
    -796 -1129 -799 -1122 -4 6 -79 186 -168 399 l-161 389 150 720 c82 396 150
    728 150 739 0 19 -49 19 -2899 19 l-2900 0 -16 -72z"
-        />
+        ></path>
       </g>
-    </svg>
+    </SvgLogo>
   )
 }

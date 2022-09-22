@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { WorkList } from '../components/Work'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGripVertical } from '@fortawesome/free-solid-svg-icons'
+import { faGripVertical, faCircleDown } from '@fortawesome/free-solid-svg-icons'
 const Home: React.FC = () => {
   const [active, setActive] = useState(false)
   useEffect(() => {
@@ -18,6 +18,10 @@ const Home: React.FC = () => {
           <h1 className={'item ' + (active && 'active')}>
             Front End Developer
           </h1>
+        </div>
+        <div className="scrollDownIcon text-center floatEffect">
+          <FontAwesomeIcon icon={faCircleDown} />
+          <span>Scroll Down</span>
         </div>
       </section>
       <section className="maxWidthContainer pSide98">

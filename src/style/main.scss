@@ -106,12 +106,21 @@ html,body,#root{
   }
 
 }
-.logo{
-  position: fixed;
-  z-index: -1;
-  left:0;
-  top:0;
+
+//home page
+.scrollDownIcon{
+   position: absolute;
+   bottom: 30px;
+   left: 0;
+   right:0;
+   font-size: 30px;
+   margin: auto;
+   span{
+     display: inline-block;
+     margin-left: 10px;
+   }
 }
+
 .flexContent{
   display: flex;
   &.startItem{
@@ -154,7 +163,6 @@ html,body,#root{
     }
   }
 }
-$pSide:98px;
 .maxWidthContainer{
   max-width: 1440px;
   width:100%;
@@ -181,7 +189,7 @@ $pSide:98px;
      }
      h1{
       font-size: 200px;
-      font-size: min(max(12.5vw,100px),200px);
+      font-size: min(max(12vw,100px),200px);
       //font-size: 8vw;
       padding: 0 16.5px;
      }
@@ -242,4 +250,24 @@ $pSide:98px;
     }
   }
 }
-.floatEffect{}
+
+.floatEffect{
+  animation: 1s ease-in 1s infinite alternate floating;
+  -webkit-animation: 1s ease-in 1s infinite alternate floating;
+}
+@-webkit-keyframes floating {
+  from{
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+@keyframes floating {
+  from{
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
