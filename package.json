@@ -2,6 +2,7 @@
   "name": "react_portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://t1123425.github.io/My-portfolio",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
@@ -29,6 +30,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.0.8",
     "firebase": "^9.9.2",
+    "gh-pages": "^4.0.0",
     "gsap": "^3.11.0",
     "prettier": "^2.0.0",
     "purecss": "^2.1.0",
@@ -45,9 +47,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "predeploy": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "fix": "eslint src --ext .js,.jsx,.ts,.tsx  --fix"
   },
