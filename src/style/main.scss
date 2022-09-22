@@ -64,7 +64,7 @@ html,body,#root{
     height: 3px;
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: -10px;
     @include transitionEffect(width,0.5s,ease);
     background-color: #fff;
   }
@@ -115,10 +115,19 @@ html,body,#root{
    right:0;
    font-size: 30px;
    margin: auto;
+   &.active{
+     opacity: 1;
+   }
+   opacity: 0;
+   @include transitionEffect(opacity,1s,ease-in);
    span{
      display: inline-block;
      margin-left: 10px;
    }
+}
+.infoText{
+  padding: 50px 10px;
+  font-size: 30px;
 }
 
 .flexContent{
@@ -170,14 +179,19 @@ html,body,#root{
   &.pTop50{
     padding-top: 50px;
   }
+  &.pBottom50{
+    padding-bottom: 50px;
+  }
   &.pSide98{
     padding-left: 98px;
     padding-right: 98px;
   }
+  &.viewHeight{
+    height: 100vh;
+  }
   &.flex{
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
      &.justifyCenter{
       justify-content: center;
      }
@@ -199,9 +213,6 @@ html,body,#root{
      
   }
   @media (max-width:768px){
-    &.flex{
-      height: auto;
-    }
     &.pSide98{
       padding-left: 20px;
       padding-right: 20px;
