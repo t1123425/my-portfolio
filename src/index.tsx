@@ -12,13 +12,13 @@ import './style/reset.local.css'
 import './style/main.scss'
 
 import App from './App'
-import ScrollToTop from './helpers/ScrollTop'
+// import ScrollToTop from './helpers/ScrollTop'
 const container = document.getElementById('root')
 const root = ReactDOM.createRoot(container as HTMLElement)
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />

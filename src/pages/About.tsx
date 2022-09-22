@@ -8,7 +8,7 @@ export const About: React.FC = () => {
         <h1 className="title bold borderBottom">About Me</h1>
         <div className="InfoContent flexContent column space-between">
           <div className="InfoBox halfBox text-center">
-            <img src={Head} alt="InfoImg" />
+            <img src={Head} alt="HEAD" />
           </div>
           <div className="InfoBox">
             <p>My name is Tom Yuan, I am a front-end engineer from Taiwan.</p>

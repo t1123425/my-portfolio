@@ -1,13 +1,15 @@
-import React, { useEffect, Fragment } from 'react'
-import { Outlet } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, Fragment, useState } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { updateWorkData } from './features/workData/actions'
 import axios from './plugins/axios'
 import { LogoContent } from './components/Logo'
 import { Navbar } from './components/Navbar'
 import { initFireBase, getImgUrl } from './plugins/firebase'
 import { WorkDataType } from './features/workData/types'
+import { getWorkDataArray } from './features/workData/selectors'
 import Contact from './pages/Contact'
+import { ScrollTop } from './helpers/ScrollTop'
 async function LoadWorkData() {
   try {
     const storeData = await axios.get(
@@ -37,8 +39,26 @@ async function LoadWorkData() {
     console.error(error)
   }
 }
+function renderIconBg(path: string) {
+  switch (path) {
+    case '/work':
+      return '#b3dec1'
+      break
+    case '/about':
+      return '#7392b7'
+      break
+    case '/':
+      return '#03045e'
+      break
+    default:
+      return '#1637d1'
+  }
+}
 const App: React.FC = () => {
   const dispatch = useDispatch()
+  const [iconBg, setIconBg] = useState('#03045e')
+  let DataState = useSelector(getWorkDataArray)
+  const { pathname } = useLocation()
   // Initialize Firebase
   initFireBase()
   useEffect(() => {
@@ -55,13 +75,20 @@ const App: React.FC = () => {
       )
       dispatch(updateWorkData(dataArray))
     }
-    asyncEnv()
-  }, [])
+    if (DataState.workDataArray.length === 0) {
+      console.log('run load firebase')
+      asyncEnv()
+    }
+    // console.log('pathname', pathname)
+    setIconBg(renderIconBg(pathname))
+    //when route change scroll to top
+    ScrollTop()
+  }, [pathname])
 
   return (
     <Fragment>
       <Navbar />
-      <LogoContent background="#03045e" />
+      <LogoContent background={iconBg} />
       <main className="container">
         <Outlet />
       </main>
