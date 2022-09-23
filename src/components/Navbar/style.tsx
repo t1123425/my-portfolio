@@ -52,6 +52,7 @@ export const NavWrap = styled.nav`
     left: 0;
     top: 0;
     background-color: #0077b6;
+    opacity: 0;
     /* &.active {
       height: 100vh;
     } */

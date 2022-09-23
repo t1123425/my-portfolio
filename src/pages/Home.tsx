@@ -20,7 +20,7 @@ const Home: React.FC = () => {
     } else {
       setHide(false)
     }
-    console.log('height', winScroll)
+    // console.log('height', winScroll)
   }
   useEffect(() => {
     window.addEventListener('scroll', scrollControl)

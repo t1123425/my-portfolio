@@ -6,13 +6,13 @@ interface PropType {
   path?: string
 }
 
-export const LogoContent: React.FC<PropType> = (props) => {
+export const LogoContent: React.FC<PropType> = () => {
   useEffect(() => {
     // gsap.from('#tylogo', {
     //   drawSVG: 0,
     //   duration: 20,
     // })
-    console.log('svg', props)
+    // console.log('svg', props)
   }, [])
   return (
     <SvgLogo
