@@ -17,7 +17,8 @@
 }
 body {
   margin: 0;
-  font-family: 'LeagueGothic',Arial, Helvetica Neue, Helvetica, sans-serif;
+  // font-family: 'LeagueGothic',Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
@@ -43,7 +44,7 @@ html,body,#root{
   border: 0;
   outline: none;
   color:inherit;
-  font-size: 40px;
+  font-size: 1.8rem;
   position: relative;
   &.morework{
     margin:50px auto;
@@ -82,6 +83,9 @@ html,body,#root{
 .container{
   width: 100%;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (max-width:768px) {
     padding-top: 50px;
   }
@@ -91,10 +95,10 @@ html,body,#root{
 }
 .title{
   width: 100%;
-  font-size: 3vw;
+  font-size: 2.5vw;
   margin:20px auto;
   &.borderBottom{
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-bottom: 5px solid #fff;
     text-indent: 10px;
   }
@@ -148,23 +152,8 @@ html,body,#root{
   &.space-between{
     justify-content: space-between;
   }
-  .InfoBox,.halfBox{
-    font-size: 40px;
-    box-sizing: border-box;
-  }
   .halfBox{
     width:50%;
-  }
-  .InfoBox{
-    p{
-      margin-bottom: 10px;
-    }
-    img{
-      border-radius: 50%;
-      max-width: 420px;
-      width:100%;
-      margin:50px auto;
-    }
   }
   @media (max-width:768px) {
     .halfBox{
@@ -203,8 +192,8 @@ html,body,#root{
      }
      h1{
       font-size: 200px;
+      font-family: 'LeagueGothic',sans-serif;
       font-size: min(max(12vw,100px),200px);
-      //font-size: 8vw;
       padding: 0 16.5px;
      }
      h2{
@@ -224,15 +213,12 @@ html,body,#root{
 .contactContent{
   margin-top: 50px;
   padding: 50px 0 25px;
-  .mainTitle{
-    font-size: min(max(12.5vw, 80px), 200px);
-  }
-  .email{
-    font-size: min(max(12.5vw, 40px), 100px);
+  .mainTitle,.email{
+    font-size: min(max(6vw, 27px), 60px);
   }
   .contactList{
     padding:50px auto;
-    font-size: 40px;
+    font-size: 20px;
     margin: 20px auto;
     li{
       &:first-child{

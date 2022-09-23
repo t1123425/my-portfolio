@@ -16,11 +16,10 @@ export const WorkListWrap = styled.div`
 `
 export const WorkInfoBlock = styled.div`
   padding: 0 10px;
-  font-size: 2.8rem;
+  font-size: 1.5rem;
   img {
     width: 100%;
-    min-height: 500px;
-    //background-color: #ccc;
+    min-height: 300px;
   }
   p {
     margin: 30px auto;
@@ -29,6 +28,7 @@ export const WorkInfoBlock = styled.div`
     display: flex;
     margin: 10px auto;
     span {
+      display: inline-block;
       margin-right: 10px;
     }
   }
@@ -42,6 +42,9 @@ export const WorkInfoBlock = styled.div`
     max-width: 241px;
     text-align: center;
     margin: 50px auto;
+  }
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `
 

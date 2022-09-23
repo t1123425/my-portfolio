@@ -27,7 +27,7 @@ const WorkDetail: React.FC = () => {
         </div>
         <div className="workBox">
           <span>Tech:</span>
-          <div>
+          <div className="techList">
             {workData?.workTech.map((e: string, i: number) => {
               return <span key={i}>{e}</span>
             })}
