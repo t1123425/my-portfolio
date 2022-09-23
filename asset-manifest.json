@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/My-portfolio/static/css/main.96ac8785.css",
-    "main.js": "/My-portfolio/static/js/main.fb45c49a.js",
+    "main.css": "/My-portfolio/static/css/main.f1c55329.css",
+    "main.js": "/My-portfolio/static/js/main.af71ef48.js",
     "static/media/head.jpg": "/My-portfolio/static/media/head.c4d59ef54b5bd06c67e3.jpg",
     "static/media/viewBg.jpg": "/My-portfolio/static/media/viewBg.724715dd474bd4059932.jpg",
-    "static/media/LeagueGothic-Regular.otf": "/My-portfolio/static/media/LeagueGothic-Regular.308bc2693a3824fb67ed.otf",
     "index.html": "/My-portfolio/index.html",
-    "main.96ac8785.css.map": "/My-portfolio/static/css/main.96ac8785.css.map",
-    "main.fb45c49a.js.map": "/My-portfolio/static/js/main.fb45c49a.js.map"
+    "main.f1c55329.css.map": "/My-portfolio/static/css/main.f1c55329.css.map",
+    "main.af71ef48.js.map": "/My-portfolio/static/js/main.af71ef48.js.map"
   },
   "entrypoints": [
-    "static/css/main.96ac8785.css",
-    "static/js/main.fb45c49a.js"
+    "static/css/main.f1c55329.css",
+    "static/js/main.af71ef48.js"
   ]
 }
