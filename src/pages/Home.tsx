@@ -58,7 +58,7 @@ const Home: React.FC = () => {
           My Recently Works
         </h1>
         <WorkList workLimit={4} />
-        <Link to="work" className="btn morework text-center">
+        <Link to="/work" className="btn morework text-center">
           <FontAwesomeIcon icon={faGripVertical} />
           <span>More works</span>
         </Link>

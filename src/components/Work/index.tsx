@@ -19,10 +19,7 @@ export const WorkList: React.FC<WorklistProps> = (props) => {
         if (props.workLimit && i >= props.workLimit) return null
         return (
           <WorkBlock key={i} bgImg={e.imgSrc ? e.imgSrc : null}>
-            <Link
-              className="workTitle allEffect"
-              to={`/my-portfolio/work/${e.name}`}
-            >
+            <Link className="workTitle allEffect" to={`/work/${e.name}`}>
               <h2 className="title text-center">{e.name}</h2>
             </Link>
           </WorkBlock>

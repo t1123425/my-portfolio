@@ -44,7 +44,7 @@ const WorkDetail: React.FC = () => {
         className="btn backPage"
         onClick={(e) => {
           e.preventDefault()
-          history('/my-portfolio/work')
+          history('/work')
         }}
       >
         <FontAwesomeIcon icon={faLeftLong} />

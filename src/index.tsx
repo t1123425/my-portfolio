@@ -15,15 +15,15 @@ const container = document.getElementById('root')
 const root = ReactDOM.createRoot(container as HTMLElement)
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="/my-portfolio">
       <Routes>
-        <Route path="/my-portfolio/" element={<App />}>
+        <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="work" element={<Work />} />
           <Route path="work/:workName" element={<WorkDetail />} />
         </Route>
-        <Route path="*" element={<Navigate to="/my-portfolio/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   </Provider>
