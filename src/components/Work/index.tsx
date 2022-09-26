@@ -21,7 +21,7 @@ export const WorkList: React.FC<WorklistProps> = (props) => {
           <WorkBlock key={i} bgImg={e.imgSrc ? e.imgSrc : null}>
             <Link
               className="workTitle allEffect"
-              to={`/My-portfolio/work/${e.name}`}
+              to={`/my-portfolio/work/${e.name}`}
             >
               <h2 className="title text-center">{e.name}</h2>
             </Link>

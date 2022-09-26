@@ -2,7 +2,7 @@
   "name": "react_portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://t1123425.github.io/My-portfolio",
+  "homepage": "https://t1123425.github.io/my-portfolio",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",

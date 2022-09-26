@@ -9,4 +9,4 @@ Other plugins/tools used:
 - [GSAP](https://greensock.com/docs/)
 
 ## Demo
-Website link: **[Here](https://t1123425.github.io/My-portfolio)**
+Website link: **[Here](https://t1123425.github.io/my-portfolio)**

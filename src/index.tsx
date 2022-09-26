@@ -17,13 +17,13 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        <Route path="/My-portfolio/" element={<App />}>
+        <Route path="/my-portfolio/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="work" element={<Work />} />
           <Route path="work/:workName" element={<WorkDetail />} />
         </Route>
-        <Route path="*" element={<Navigate to="/My-portfolio/" replace />} />
+        <Route path="*" element={<Navigate to="/my-portfolio/" replace />} />
       </Routes>
     </BrowserRouter>
   </Provider>
