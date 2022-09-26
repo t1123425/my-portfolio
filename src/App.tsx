@@ -76,7 +76,6 @@ const App: React.FC = () => {
       dispatch(updateWorkData(dataArray))
     }
     if (DataState.workDataArray.length === 0) {
-      console.log('run load firebase')
       asyncEnv()
     }
     // console.log('pathname', pathname)

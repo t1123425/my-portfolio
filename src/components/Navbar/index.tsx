@@ -16,11 +16,11 @@ const NavLinksArr: NavLinks[] = [
   },
   {
     name: 'Work',
-    path: '/work',
+    path: 'work',
   },
   {
     name: 'About',
-    path: '/about',
+    path: 'about',
   },
   // {
   //   name: 'Github',

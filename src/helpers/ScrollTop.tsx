@@ -13,10 +13,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     // "document.documentElement.scrollTo" is the magic for React Router Dom v6
-    document.documentElement.scrollTo({
-      top: 0,
-      left: 0,
-    })
+    ScrollTop()
   }, [pathname])
 
   return null

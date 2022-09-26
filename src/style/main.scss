@@ -90,7 +90,7 @@ html,body,#root{
 }
 .title{
   width: 100%;
-  font-size: 2.5vw;
+  font-size: 2.1vw;
   margin:20px auto;
   &.borderBottom{
     padding-bottom: 10px;
@@ -101,7 +101,7 @@ html,body,#root{
     font-weight: bolder;
   }
   @media (max-width:768px) {
-    font-size: 28px;
+    font-size: 25px;
     word-break: break-all;
   }
 
