@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect, useState } from 'react'
-import { WorkList } from '../components/Work'
+import React, { Fragment, useEffect, useState, Suspense, lazy } from 'react'
+const WorksList = lazy(() => import('../components/Work'))
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGripVertical, faCircleDown } from '@fortawesome/free-solid-svg-icons'
@@ -9,18 +9,11 @@ const Home: React.FC = () => {
   const scrollControl = () => {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop
-    // const height =
-    //   document.documentElement.scrollHeight -
-    //   document.documentElement.clientHeight
-
-    // const scrolled = winScroll / height
-    // console.log(scrolled)
     if (winScroll >= 25) {
       setHide(true)
     } else {
       setHide(false)
     }
-    // console.log('height', winScroll)
   }
   useEffect(() => {
     window.addEventListener('scroll', scrollControl)
@@ -57,7 +50,11 @@ const Home: React.FC = () => {
         <h1 className="title bold borderBottom text-center">
           My Recently Works
         </h1>
-        <WorkList workLimit={4} />
+        <Suspense
+          fallback={<p className="text-center bold">Loading Works....</p>}
+        >
+          <WorksList workLimit={4} />
+        </Suspense>
         <Link to="/work" className="btn morework text-center">
           <FontAwesomeIcon icon={faGripVertical} />
           <span>More works</span>

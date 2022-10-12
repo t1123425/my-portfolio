@@ -8,10 +8,10 @@ interface WorklistProps {
   workLimit?: number
 }
 
-export const WorkList: React.FC<WorklistProps> = (props) => {
+const WorkList: React.FC<WorklistProps> = (props) => {
   let DataState = useSelector(getWorkDataArray)
   useEffect(() => {
-    // console.log('worklist', DataState)
+    console.log('worklist', DataState)
   }, [DataState])
   return (
     <WorkListWrap>
@@ -28,3 +28,4 @@ export const WorkList: React.FC<WorklistProps> = (props) => {
     </WorkListWrap>
   )
 }
+export default WorkList

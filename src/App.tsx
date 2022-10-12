@@ -1,5 +1,5 @@
-import React, { useEffect, Fragment, useState } from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
+import React, { useEffect, Fragment } from 'react'
+import { Outlet } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateWorkData } from './features/workData/actions'
 import axios from './plugins/axios'
@@ -39,26 +39,10 @@ async function LoadWorkData() {
     console.error(error)
   }
 }
-function renderIconBg(path: string) {
-  switch (path) {
-    case '/work':
-      return '#b3dec1'
-      break
-    case '/about':
-      return '#7392b7'
-      break
-    case '/':
-      return '#03045e'
-      break
-    default:
-      return '#1637d1'
-  }
-}
+
 const App: React.FC = () => {
   const dispatch = useDispatch()
-  const [iconBg, setIconBg] = useState('#03045e')
   let DataState = useSelector(getWorkDataArray)
-  const { pathname } = useLocation()
   // Initialize Firebase
   initFireBase()
   useEffect(() => {
@@ -78,16 +62,14 @@ const App: React.FC = () => {
     if (DataState.workDataArray.length === 0) {
       asyncEnv()
     }
-    // console.log('pathname', pathname)
-    setIconBg(renderIconBg(pathname))
     //when route change scroll to top
     ScrollTop()
-  }, [pathname])
+  }, [])
 
   return (
     <Fragment>
       <Navbar />
-      <LogoContent background={iconBg} />
+      <LogoContent />
       <main className="container">
         <Outlet />
       </main>
