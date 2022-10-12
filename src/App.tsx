@@ -9,7 +9,7 @@ import { initFireBase, getImgUrl } from './plugins/firebase'
 import { WorkDataType } from './features/workData/types'
 import { getWorkDataArray } from './features/workData/selectors'
 import Contact from './pages/Contact'
-import { ScrollTop } from './helpers/ScrollTop'
+// import { ScrollTop } from './helpers/ScrollTop'
 async function LoadWorkData() {
   try {
     const storeData = await axios.get(
@@ -63,7 +63,7 @@ const App: React.FC = () => {
       asyncEnv()
     }
     //when route change scroll to top
-    ScrollTop()
+    // ScrollTop()
   }, [])
 
   return (

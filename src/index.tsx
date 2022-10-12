@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import Work from './pages/Work'
 import { About } from './pages/About'
 import WorkDetail from './pages/WorkDetail'
+import ScrollToTop from './helpers/ScrollTop'
 import store from './store'
 import 'purecss'
 import './style/reset.local.css'
@@ -16,6 +17,7 @@ const root = ReactDOM.createRoot(container as HTMLElement)
 root.render(
   <Provider store={store}>
     <BrowserRouter basename="/my-portfolio">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />

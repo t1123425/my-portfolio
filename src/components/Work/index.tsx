@@ -11,7 +11,7 @@ interface WorklistProps {
 const WorkList: React.FC<WorklistProps> = (props) => {
   let DataState = useSelector(getWorkDataArray)
   useEffect(() => {
-    console.log('worklist', DataState)
+    // console.log('worklist', DataState)
   }, [DataState])
   return (
     <WorkListWrap>
