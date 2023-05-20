@@ -3,6 +3,7 @@ const WorksList = lazy(() => import('../components/Work'))
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGripVertical, faCircleDown } from '@fortawesome/free-solid-svg-icons'
+import LoadingBlock from '../components/Loading'
 const Home: React.FC = () => {
   const [active, setActive] = useState(false)
   const [hide, setHide] = useState(false)
@@ -50,12 +51,10 @@ const Home: React.FC = () => {
         <h1 className="title bold borderBottom text-center">
           My Recently Works
         </h1>
-        <Suspense
-          fallback={<p className="text-center bold">Loading Works....</p>}
-        >
+        <Suspense fallback={<LoadingBlock />}>
           <WorksList workLimit={4} />
         </Suspense>
-        <Link to="/work" className="btn morework text-center">
+        <Link to="/work" className="btn morework scaleHover text-center">
           <FontAwesomeIcon icon={faGripVertical} />
           <span>More works</span>
         </Link>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { getWorkDataArray } from '../../features/workData/selectors'
@@ -10,9 +10,6 @@ interface WorklistProps {
 
 const WorkList: React.FC<WorklistProps> = (props) => {
   let DataState = useSelector(getWorkDataArray)
-  useEffect(() => {
-    // console.log('worklist', DataState)
-  }, [DataState])
   return (
     <WorkListWrap>
       {DataState.workDataArray.map((e: any, i: number) => {

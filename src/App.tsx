@@ -45,25 +45,23 @@ const App: React.FC = () => {
   let DataState = useSelector(getWorkDataArray)
   // Initialize Firebase
   initFireBase()
+  const asyncEnv = async () => {
+    const workArray = await LoadWorkData()
+    const dataArray = await Promise.all(
+      workArray.map(async (e: WorkDataType) => {
+        const imgSrc = await getImgUrl(e.name)
+        return {
+          ...e,
+          imgSrc: imgSrc,
+        }
+      })
+    )
+    dispatch(updateWorkData(dataArray))
+  }
   useEffect(() => {
-    const asyncEnv = async () => {
-      const workArray = await LoadWorkData()
-      const dataArray = await Promise.all(
-        workArray.map(async (e: WorkDataType) => {
-          const imgSrc = await getImgUrl(e.name)
-          return {
-            ...e,
-            imgSrc: imgSrc,
-          }
-        })
-      )
-      dispatch(updateWorkData(dataArray))
-    }
     if (DataState.workDataArray.length === 0) {
       asyncEnv()
     }
-    //when route change scroll to top
-    // ScrollTop()
   }, [])
 
   return (

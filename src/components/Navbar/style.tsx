@@ -41,8 +41,22 @@ export const NavWrap = styled.nav`
     font-size: 1.56rem;
     padding-bottom: 5px;
     box-sizing: border-box;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      transition: width 0.5s;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+    }
     &:hover {
-      border-bottom: 1px solid #fff;
+      &:after {
+        width: 100%;
+      }
     }
   }
   @media (max-width: 768px) {

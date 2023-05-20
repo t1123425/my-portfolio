@@ -75,6 +75,13 @@ html,body,#root{
     }
   }
 }
+.scaleHover{
+  transform: scale(0.9);
+  transition: transform 0.5s;
+  &:hover{
+    transform: scale(1);
+  }
+}
 .container{
   width: 100%;
   min-height: 100%;

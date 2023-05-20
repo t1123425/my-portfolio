@@ -14,10 +14,17 @@ export const WorkListWrap = styled.div`
     grid-template-columns: 1fr;
   }
 `
+
 export const WorkInfoBlock = styled.div`
   padding: 0 10px;
   font-size: 1.5rem;
+  flex: 1;
+  .imgBlock {
+    max-width: 80%;
+    margin: auto;
+  }
   img {
+    border-radius: 25px;
     width: 100%;
     min-height: 300px;
   }
@@ -50,7 +57,6 @@ export const WorkInfoBlock = styled.div`
 
 export const WorkBlock = styled.div<WorkBlockProp>`
   display: inline-block;
-  /* min-height: 300px; */
   position: relative;
   box-sizing: border-box;
   cursor: pointer;

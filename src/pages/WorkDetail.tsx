@@ -13,12 +13,13 @@ const WorkDetail: React.FC = () => {
   const { workName } = useParams<RouteParams>()
   const history = useNavigate()
   let workData = useSelector(getWorkData(workName || ''))
-  // console.log('work', workData)
   return (
     <section className="maxWidthContainer pTop50">
       <h1 className="title bold text-center">{workName}</h1>
       <WorkInfoBlock>
-        <img src={workData?.imgSrc || null} alt={workName} />
+        <div className="imgBlock">
+          <img src={workData?.imgSrc || null} alt={workName} />
+        </div>
       </WorkInfoBlock>
       <WorkInfoBlock>
         <div className="workBox">
@@ -35,7 +36,11 @@ const WorkDetail: React.FC = () => {
         </div>
         <p>{workData?.description}</p>
         {workData?.link ? (
-          <a href={workData.link} className="linkBtn" target="_blank">
+          <a
+            href={workData.link}
+            className="linkBtn scaleHover"
+            target="_blank"
+          >
             Visit Site
           </a>
         ) : null}
