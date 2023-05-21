@@ -13,6 +13,9 @@ export const HeaderWrap = styled.header<HeaderProps>`
   width: 100%;
   color: ${(props) => (props.color ? props.color : '#fff')};
   background-color: ${(props) => (props.bgColor ? props.bgColor : '#168AAD')};
+  filter: saturate(100%);
+  -webkit-backdrop-filter: blur(88px);
+  backdrop-filter: blur(88px);
   /* box-shadow: var(---shadow);
   -webkit-box-shadow: var(---shadow);
   -moz-box-shadow: var(---shadow); */
