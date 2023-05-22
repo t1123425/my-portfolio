@@ -1,19 +1,13 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { SvgLogo } from './style'
-import viewBg from '../../assets/img/viewBg.jpg'
-interface PropType {
+import homeBg from '../../assets/img/homeBg.jpg'
+interface Props {
   background?: string
   path?: string
+  show: boolean
 }
 
-export const LogoContent: React.FC<PropType> = () => {
-  useEffect(() => {
-    // gsap.from('#tylogo', {
-    //   drawSVG: 0,
-    //   duration: 20,
-    // })
-    // console.log('svg', props)
-  }, [])
+export const LogoContent: React.FC<Props> = ({ show }) => {
   return (
     <SvgLogo
       version="1.1"
@@ -23,6 +17,7 @@ export const LogoContent: React.FC<PropType> = () => {
       preserveAspectRatio="xMidYMid meet"
       id="tylogo"
       viewBox="0 0 900 900"
+      className={!show ? 'hide' : ''}
     >
       <defs>
         <pattern
@@ -32,7 +27,7 @@ export const LogoContent: React.FC<PropType> = () => {
           width="100%"
           height="100%"
         >
-          <image href={viewBg} x="-300" y="0" />
+          <image href={homeBg} x="-300" y="0" />
         </pattern>
       </defs>
       {/* transform="translate(-200,900) scale(0.1,-0.1)" */}

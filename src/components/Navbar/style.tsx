@@ -70,16 +70,13 @@ export const NavWrap = styled.nav`
     top: 0;
     background-color: #0077b6;
     opacity: 0;
-    /* &.active {
-      height: 100vh;
-    } */
     .navLinksList {
       flex-direction: column;
       height: 100%;
       justify-content: center;
     }
     .navLinksList a {
-      font-size: 18vw;
+      font-size: 4em;
     }
   }
 `

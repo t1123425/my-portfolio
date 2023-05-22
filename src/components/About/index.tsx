@@ -37,7 +37,8 @@ export const SkillList: React.FC = () => {
         'Javascript(ES6)',
         'Typescript',
         'Bootstrap',
-        'Tailwind',
+        'TailwindCSS',
+        'Styled-component',
         'React/React Router/Redux',
         'Vue/Vue Router/VUEX',
       ],
@@ -45,7 +46,15 @@ export const SkillList: React.FC = () => {
     },
     {
       name: 'BackEnd',
-      skills: ['Node.js', 'Express.js', 'Heroku', 'Docker'],
+      skills: [
+        'Node.js',
+        'Express.js',
+        'Firebase',
+        'Next.js',
+        'Docker',
+        'Prisma',
+        'MongoDB',
+      ],
       icon: faServer,
     },
     {

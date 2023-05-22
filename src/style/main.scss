@@ -24,7 +24,7 @@ body {
   }
   
 }
-html,body,#root{
+html,body{
   width: 100%;
   height:100%;
 }
@@ -92,9 +92,32 @@ html,body,#root{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 50px;
+  position: relative;
   @media (max-width:768px) {
     padding-top: 50px;
   }
+  &:before{
+    content:"";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    top:0;
+    left:0;
+    background-color: #0077b6;
+    transition: all 0.5s;
+  }
+  &.tyLogoBg{
+    &:before{
+      background-image: url('../assets/img/tylogo.jpg');
+      background-color: #0c0e0f;
+      background-size: 100px;
+      background-attachment: fixed;
+    }
+ }
+  
 }
 .text-center{
   text-align: center;
@@ -121,10 +144,10 @@ html,body,#root{
 //home page
 .scrollDownIcon{
    position: absolute;
-   bottom: 30px;
+   bottom: 60px;
    left: 0;
    right:0;
-   font-size: 30px;
+   font-size: 2em;
    margin: auto;
    &.active{
      opacity: 1;
@@ -161,10 +184,8 @@ html,body,#root{
   }
   .halfBox{
     width:50%;
-  }
-  @media (max-width:768px) {
-    .halfBox{
-      width:100%;
+    img{
+      width: 50%;
     }
   }
 }
@@ -172,6 +193,7 @@ html,body,#root{
   max-width: 1440px;
   width:100%;
   margin:auto;
+  position: relative;
   &.pTop50{
     padding-top: 50px;
   }
@@ -218,7 +240,6 @@ html,body,#root{
 }
 //contact
 .contactContent{
-  margin-top: 50px;
   padding: 50px 0 25px;
   .mainTitle,.email{
     font-size: min(max(6vw, 27px), 60px);
@@ -275,3 +296,4 @@ html,body,#root{
     transform: translateY(10px);
   }
 }
+

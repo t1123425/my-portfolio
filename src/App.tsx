@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useMatch } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateWorkData } from './features/workData/actions'
 import axios from './plugins/axios'
@@ -58,6 +58,10 @@ const App: React.FC = () => {
     )
     dispatch(updateWorkData(dataArray))
   }
+  const bgRouteMatch = () => {
+    const match = useMatch('/')
+    return match ? true : false
+  }
   useEffect(() => {
     if (DataState.workDataArray.length === 0) {
       asyncEnv()
@@ -67,8 +71,8 @@ const App: React.FC = () => {
   return (
     <Fragment>
       <Navbar />
-      <LogoContent />
-      <main className="container">
+      <main className={'container ' + (!bgRouteMatch() && 'tyLogoBg')}>
+        <LogoContent show={bgRouteMatch()} />
         <Outlet />
       </main>
       <Contact />

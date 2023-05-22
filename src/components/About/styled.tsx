@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const InfoBox = styled.div`
-  font-size: 25px;
+  font-size: 1.5em;
   box-sizing: border-box;
   letter-spacing: 0.3px;
   p {
