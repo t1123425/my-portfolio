@@ -10,6 +10,8 @@ export const InfoBox = styled.div`
     max-width: 420px;
     width: 100%;
     margin: 50px auto;
+    max-width: 240px;
+    min-width: 200px;
   }
   @media (max-width: 768px) {
     font-size: 20px;
