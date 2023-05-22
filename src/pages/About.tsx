@@ -25,7 +25,7 @@ const langData: Langs[] = [
   },
 ]
 export const About: React.FC = () => {
-  const [currentLang, setCurrentLang] = useState('ch')
+  const [currentLang, setCurrentLang] = useState('en')
   return (
     <article className="maxWidthContainer pTop50 pSide98">
       <section>
