@@ -4,10 +4,7 @@ export const InfoBox = styled.div`
   font-size: 1.5em;
   box-sizing: border-box;
   letter-spacing: 0.3px;
-  p {
-    //margin-bottom: 10px;
-    padding: 10px;
-  }
+  white-space: pre-line;
   img {
     border-radius: 50%;
     max-width: 420px;
@@ -19,6 +16,27 @@ export const InfoBox = styled.div`
   }
 `
 
+export const LangBox = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  .langBtn {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #fff;
+    color: #0077b6;
+    margin-left: 10px;
+    font-size: 0.5em;
+    &.active,
+    &:hover {
+      background-color: #0077b6;
+      color: #fff;
+    }
+  }
+`
 export const SkillBlock = styled.div`
   padding: 10px;
   width: 100%;

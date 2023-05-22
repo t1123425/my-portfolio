@@ -8,8 +8,8 @@ export const SvgLogo = styled.svg`
 
   &.hide {
     path {
-      -webkit-animation: re-dash 0.5s linear forwards;
-      animation: re-dash 0.5s linear forwards;
+      -webkit-animation: re-dash 0.1s linear forwards;
+      animation: re-dash 0.1s linear forwards;
       animation-direction: reverse;
     }
   }
@@ -21,7 +21,6 @@ export const SvgLogo = styled.svg`
     -webkit-animation: dash 2.5s linear forwards;
     animation: dash 2.5s linear forwards;
     fill-opacity: 0;
-    /* animation-direction: alternate-reverse; */
   }
   @-webkit-keyframes dash {
     75% {
