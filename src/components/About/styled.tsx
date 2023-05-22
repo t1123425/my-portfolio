@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const InfoBox = styled.div`
   font-size: 1.5em;
   box-sizing: border-box;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.6px;
   white-space: pre-line;
   img {
     border-radius: 50%;
