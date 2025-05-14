@@ -9,14 +9,17 @@ import { initFireBase, getImgUrl } from './plugins/firebase'
 import { WorkDataType } from './features/workData/types'
 import { getWorkDataArray } from './features/workData/selectors'
 import Contact from './pages/Contact'
-// import { ScrollTop } from './helpers/ScrollTop'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(useGSAP, ScrollTrigger)
 async function LoadWorkData() {
   try {
     const storeData = await axios.get(
       process.env.REACT_APP_API_ID + '/databases/(default)/documents/work'
     )
     const workStoreData = storeData.data.documents
-    //console.log('storeDATA', workStoreData)
     let sortArray = []
     const dataArray = workStoreData.map((e: any) => {
       const workData = {

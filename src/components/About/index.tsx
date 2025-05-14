@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { SkillBlock } from './styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -7,6 +7,9 @@ import {
   faServer,
   faScrewdriverWrench,
 } from '@fortawesome/free-solid-svg-icons'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+
 interface InfoProps {
   imgSrc?: string
   info?: string
@@ -29,11 +32,34 @@ interface SkillTypes {
   icon: IconDefinition
 }
 export const SkillList: React.FC = () => {
+  const skillWrapRef = useRef<HTMLDivElement | null>(null)
+  const skillBoxRef = useRef<(HTMLDivElement | null)[]>([])
+
+  useGSAP(
+    () => {
+      skillBoxRef.current.forEach((box, i) => {
+        if (!box) return
+        gsap.from(box, {
+          scrollTrigger: {
+            trigger: box,
+            start: 'top 70%', // box 到達畫面高度 70% 的位置時開始
+            toggleActions: 'play none none none', // 只播放一次
+          },
+          opacity: 0,
+          y: 40,
+          duration: 0.6,
+          ease: 'power2.out',
+          delay: i * 0.2, // 讓每個技能框 stagger 一點點
+        })
+      })
+    },
+    { scope: skillWrapRef }
+  )
   const skillData: SkillTypes[] = [
     {
       name: 'FrontEnd',
       skills: [
-        'HTML/CSS(SCSS)',
+        'HTML/CSS(SCSS/Less)',
         'Javascript(ES6)',
         'Typescript',
         'Bootstrap',
@@ -41,33 +67,32 @@ export const SkillList: React.FC = () => {
         'Styled-component',
         'React/React Router/Redux',
         'Vue/Vue Router/VUEX',
+        'GSAP',
       ],
       icon: faCode,
     },
     {
       name: 'BackEnd',
-      skills: [
-        'Node.js',
-        'Express.js',
-        'Firebase',
-        'Next.js',
-        'Docker',
-        'Prisma',
-        'MongoDB',
-      ],
+      skills: ['Node.js', 'Express.js', 'Firebase', 'Nginx', 'MongoDB'],
       icon: faServer,
     },
     {
       name: 'Others',
-      skills: ['Webpack', 'NPM', 'GIT(HUB)', 'Docker'],
+      skills: ['Webpack', 'NPM', 'GIT', 'GitLab CI/CD'],
       icon: faScrewdriverWrench,
     },
   ]
   return (
-    <div className="flexContent column space-between">
+    <div className="flexContent column space-between" ref={skillWrapRef}>
       {skillData.map((e, i) => {
         return (
-          <SkillBlock className="bg-w b-color" key={i}>
+          <SkillBlock
+            className="bg-w b-color"
+            key={i}
+            ref={(el) => {
+              skillBoxRef.current[i] = el
+            }}
+          >
             <h2 className="skillTitle">
               <FontAwesomeIcon icon={e.icon} />
               <span>{e.name}</span>
