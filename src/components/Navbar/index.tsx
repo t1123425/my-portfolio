@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { HeaderWrap, NavWrap, MenuBar } from './style'
-
+import { useGSAP } from '@gsap/react'
 interface NavLinks {
   name: string
   path: string
@@ -32,26 +32,19 @@ const NavLinksArr: NavLinks[] = [
   //   targetLink: true,
   // },
 ]
-function ToggleEffect(status: boolean) {
-  let opacityNum = 1
-  let displayStatus = 'block'
-  if (!status) {
-    opacityNum = 0
-    displayStatus = 'none'
-  }
-  gsap.to('.navWrap', {
-    stagger: 0.5,
-    display: displayStatus,
-    opacity: opacityNum,
-    duration: 1,
-  })
-}
+
 export const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const matchMedia = gsap.matchMedia()
-  useEffect(() => {
+  const navWrapRef = useRef<HTMLDivElement | null>(null)
+  useGSAP(() => {
+    const matchMedia = gsap.matchMedia()
     matchMedia.add('(max-width:768px)', () => {
-      ToggleEffect(menuOpen)
+      gsap.to(navWrapRef.current, {
+        stagger: 0.5,
+        display: menuOpen ? 'block' : 'none',
+        opacity: menuOpen ? 1 : 0,
+        duration: 1,
+      })
     })
   }, [menuOpen])
   return (
@@ -66,7 +59,7 @@ export const Navbar: React.FC = () => {
       >
         <span className="bar"></span>
       </MenuBar>
-      <NavWrap className="navWrap maxWidthContainer">
+      <NavWrap className="navWrap maxWidthContainer" ref={navWrapRef}>
         <ul className="navLinksList">
           {NavLinksArr.map((e, i) => (
             <li key={i}>

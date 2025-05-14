@@ -14,8 +14,12 @@ const WorkList: React.FC<WorklistProps> = (props) => {
   let DataState = useSelector(getWorkDataArray)
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
   const wrapRef = useRef<HTMLDivElement | null>(null)
-  useGSAP(
-    () => {
+  useGSAP(() => {
+    if (
+      itemsRef.current &&
+      itemsRef.current.length &&
+      DataState?.workDataArray.length
+    ) {
       gsap.from(itemsRef.current, {
         opacity: 0,
         y: 50,
@@ -24,9 +28,8 @@ const WorkList: React.FC<WorklistProps> = (props) => {
         duration: 0.6,
         ease: 'power2.out',
       })
-    },
-    { scope: wrapRef }
-  )
+    }
+  }, [DataState.workDataArray])
   return (
     <WorkListWrap ref={wrapRef}>
       {DataState.workDataArray.map((e: any, i: number) => {

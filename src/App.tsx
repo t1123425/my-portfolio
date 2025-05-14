@@ -80,7 +80,7 @@ const App: React.FC = () => {
       </main>
       <Contact />
       <footer className="bg-w2 b-color">
-        <p className="text-center">Copyright © 2022 Tom Yuan Website</p>
+        <p className="text-center">Copyright © 2025 Tom Yuan Website</p>
       </footer>
     </Fragment>
   )
