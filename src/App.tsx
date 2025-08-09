@@ -12,12 +12,20 @@ import Contact from './pages/Contact'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { getToken } from 'firebase/app-check'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 async function LoadWorkData() {
   try {
+    // Initialize Firebase & get app check token
+    const token = await getToken(initFireBase(), false)
     const storeData = await axios.get(
-      process.env.REACT_APP_API_ID + '/databases/(default)/documents/work'
+      process.env.REACT_APP_API_ID + '/databases/(default)/documents/work',
+      {
+        headers: {
+          'X-Firebase-AppCheck': token.token,
+        },
+      }
     )
     const workStoreData = storeData.data.documents
     let sortArray = []
@@ -46,8 +54,6 @@ async function LoadWorkData() {
 const App: React.FC = () => {
   const dispatch = useDispatch()
   let DataState = useSelector(getWorkDataArray)
-  // Initialize Firebase
-  initFireBase()
   const asyncEnv = async () => {
     const workArray = await LoadWorkData()
     const dataArray = await Promise.all(
