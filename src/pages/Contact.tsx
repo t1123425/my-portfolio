@@ -14,13 +14,13 @@ const Contract: React.FC = () => {
         <ul className="contactList">
           <li className="text-center">
             <a
-              href="mailto:t1123425@gmail.com"
+              href="mailto:tyxr2377@gmail.com"
               className="email"
               target="_blank"
             >
               <FontAwesomeIcon icon={faEnvelope} />
               <br />
-              <strong>t1123425@gmail.com</strong>
+              <strong>tyxr2377@gmail.com</strong>
             </a>
           </li>
           <li>
